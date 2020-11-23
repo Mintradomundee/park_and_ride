@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ParkingLotControllerTest < ActionDispatch::IntegrationTest
+class ParkingLotsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
