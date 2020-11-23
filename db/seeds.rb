@@ -8,12 +8,18 @@
 
 require 'faker'
 
+adam = User.create(
+  email: "adam@adam.com",
+  password: "123456",
+)
+
 10.times do
 
-  parking_lots = ParkingLots.new(
+  parking_lots = ParkingLot.new(
     address: Faker::Address.street_address,
     vehicle_type: Faker::Vehicle.drive_type,
     price: Faker::Commerce.price,
+    user_id: adam.id
   )
 
   parking_lots.save!

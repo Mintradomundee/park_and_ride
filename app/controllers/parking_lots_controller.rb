@@ -1,19 +1,19 @@
 class ParkingLotsController < ApplicationController
 
   def index
-  @parking_lots = Parking_Lot.all
+    @parking_lots = ParkingLot.all
   end
   
   def show
-    @parking_lot = Parking_lot.find(params[:id])
+    @parking_lot = ParkingLot.find(params[:id])
   end
 
   def new
-    @parking_lot = Parking_lot.new
+    @parking_lot = ParkingLot.new
   end
 
   def create
-    @parking_lot = Parking_lot.new
+    @parking_lot = ParkingLot.new
     @parking_lot.user = current_user
     if @parking_lot.save
       redirect_to parking_lot_path(@parking_lot)

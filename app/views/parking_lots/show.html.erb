@@ -1,0 +1,8 @@
+<h2><%= @parking_lot.name %></h2>
+<p><%= @parking_lot.address %></p>
+<p><%= @parking_lot.price %></p>
+<p><%= @parking_lot.vehicle_type %></p>
+
+
+<p> <%= link_to "Add review", new_parking_lot_review_path(@parking_lot) %> </p>
+<p><%= link_to "Back to list", parking_lots_path %></p>
