@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+10.times do
+  posts = Post.new(
+    address: Faker::Address.street_address,
+    vehicle_type: Faker::Vehicle.drive_type,
+    price: Faker::Commerce.price,
+  )
+
+  posts.save!
+end
+puts 'Finished!'
