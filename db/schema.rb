@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_11_23_162547) do
+ActiveRecord::Schema.define(version: 2020_11_23_162548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "parking_lots", force: :cascade do |t|
-
     t.string "name"
     t.string "address"
     t.integer "price"
@@ -26,6 +24,17 @@ ActiveRecord::Schema.define(version: 2020_11_23_162547) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_parking_lots_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "rating_star"
+    t.bigint "parking_lot_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parking_lot_id"], name: "index_reviews_on_parking_lot_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +50,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_162547) do
   end
 
   add_foreign_key "parking_lots", "users"
+  add_foreign_key "reviews", "parking_lots"
+  add_foreign_key "reviews", "users"
 end
