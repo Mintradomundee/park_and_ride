@@ -11,3 +11,6 @@
     <li><%= @parking_lot.price %></li>
   </div>
 </div>
+
+<p> <%= link_to "Add review", new_parking_lot_review_path(@parking_lot) %> </p>
+<p><%= link_to "Back to list", parking_lots_path %></p>
