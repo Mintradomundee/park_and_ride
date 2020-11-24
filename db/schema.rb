@@ -10,22 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_11_23_162548) do
-=======
-
 ActiveRecord::Schema.define(version: 2020_11_23_162547) do
->>>>>>> b2530b635511bbc6ba4a10d41d8a6d4673276ecb
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "parking_lots", force: :cascade do |t|
-<<<<<<< HEAD
-=======
-
     t.string "name"
->>>>>>> b2530b635511bbc6ba4a10d41d8a6d4673276ecb
     t.string "address"
     t.integer "price"
     t.string "vehicle_type"
