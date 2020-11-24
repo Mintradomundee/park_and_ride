@@ -1,0 +1,11 @@
+<div>
+  <h2>Create Your EasyPark Parking Lot</h2>
+  <%= simple_form_for @parking_lot do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :vehicle_type %>
+    <%= f.input :price %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
