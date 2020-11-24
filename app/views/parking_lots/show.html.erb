@@ -1,9 +1,9 @@
 <div>
-<% if @parking_lot.photo.attached? %>
-  <%= cl_image_tag @pokemon.photo.key%>
-<% else %>
-  <%= image_tag("https://source.unsplash.com/random", alt:"image") %>
-<% end %>
+<%# if @parking_lot.photo.attached? %>
+  <%#= cl_image_tag @pokemon.photo.key%>
+<%# else %>
+  <%#= image_tag("https://source.unsplash.com/random", alt:"image") %>
+<%# end %>
   <div>
     <li><%= @parking_lot.name %></li>
     <li><%= @parking_lot.address %></li>
