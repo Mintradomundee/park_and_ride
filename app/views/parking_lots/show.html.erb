@@ -1,0 +1,16 @@
+<div>
+<% if @parking_lot.photo.attached? %>
+  <%= cl_image_tag @pokemon.photo.key%>
+<% else %>
+  <%= image_tag("https://source.unsplash.com/random", alt:"image") %>
+<% end %>
+  <div>
+    <li><%= @parking_lot.name %></li>
+    <li><%= @parking_lot.address %></li>
+    <li><%= @parking_lot.vehicle_type %></li>
+    <li><%= @parking_lot.price %></li>
+  </div>
+</div>
+
+<p> <%= link_to "Add review", new_parking_lot_review_path(@parking_lot) %> </p>
+<p><%= link_to "Back to list", parking_lots_path %></p>
