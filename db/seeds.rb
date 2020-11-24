@@ -9,11 +9,14 @@
 require 'faker'
 
 10.times do
+
   parking_lots = ParkingLots.new(
     address: Faker::Address.street_address,
     vehicle_type: Faker::Vehicle.drive_type,
     price: Faker::Commerce.price,
   )
+
+  parking_lots.save!
 
 end
 puts 'Finished!'

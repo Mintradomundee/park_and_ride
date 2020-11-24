@@ -1,6 +1,7 @@
 class CreateParkingLots < ActiveRecord::Migration[6.0]
   def change
     create_table :parking_lots do |t|
+      t.string :name
       t.string :address
       t.integer :price
       t.string :vehicle_type
