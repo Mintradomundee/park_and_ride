@@ -1,7 +1,11 @@
 class ParkingLotsController < ApplicationController
 
+  def index
+  @parking_lots = Parking_Lot.all
+  end
+  
   def show
-    @parking_lots = Parking_lot.find(params[:id])
+    @parking_lot = Parking_lot.find(params[:id])
   end
 
   def new
@@ -18,10 +22,9 @@ class ParkingLotsController < ApplicationController
     end
   end
 
-
-
   private
 
   def parking_lot_params
     params.require(:parking_lot).permit(:name, :address, :vehicle_type, :price)
+  end
 end
