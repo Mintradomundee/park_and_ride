@@ -1,7 +1,7 @@
 class ParkingLotsController < ApplicationController
 
   def index
-  @parking_lots = Parking_Lot.all
+  @parking_lots = ParkingLot.all
   end
   
   def show
