@@ -9,19 +9,14 @@
 require 'faker'
 
 10.times do
-<<<<<<< HEAD
-  parking_lots = Parking_Lot.new(
-=======
+
   parking_lots = ParkingLots.new(
->>>>>>> 6d437b073ba52d2cf8d27b9a44934d882ffa5188
     address: Faker::Address.street_address,
     vehicle_type: Faker::Vehicle.drive_type,
     price: Faker::Commerce.price,
   )
 
-<<<<<<< HEAD
   parking_lots.save!
-=======
->>>>>>> 6d437b073ba52d2cf8d27b9a44934d882ffa5188
+
 end
 puts 'Finished!'
