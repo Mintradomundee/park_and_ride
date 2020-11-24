@@ -4,7 +4,7 @@ class CreateParkingLots < ActiveRecord::Migration[6.0]
       t.string :address
       t.integer :price
       t.string :vehicle_type
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
