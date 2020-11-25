@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
         @review.parking_lot = @parking_lot
         @review.save
     
-        redirect_to parking_lot_path(@review)
+        redirect_to parking_lots_path(@review)
       end
     
       private
