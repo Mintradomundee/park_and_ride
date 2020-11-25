@@ -1,10 +1,11 @@
+<%= link_to "Create New Parking Lot", new_parking_lot_path(@parking_lot), class: "btn btn-outline-success border-ra" %>
 <div>
 <% @parking_lots.each do |parking_lot| %>
   <div>
     <% if parking_lot.photo.attached? %>
-      <%= cl_image_tag parking_lot.photo.key, class: "card-img-top" %>
+      <%= cl_image_tag parking_lot.photo.key %>
     <% else %>
-      <%= image_tag ("https://source.unsplash.com/random", alt:"image"), class: "card-img-top" %>
+      <%= image_tag "https://source.unsplash.com/random", alt:"image" %>
     <% end %>
   </div>
   <li><%= link_to parking_lot.name, parking_lot_path(parking_lot) %></li>

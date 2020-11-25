@@ -6,10 +6,10 @@
 <%# end %>
   <div>
     <div>
-      <% if parking_lot.photo.attached? %>
-        <%= cl_image_tag parking_lot.photo.key, class: "card-img-top" %>
+      <% if @parking_lot.photo.attached? %>
+        <%= cl_image_tag @parking_lot.photo.key %>
       <% else %>
-        <%= image_tag ("https://source.unsplash.com/random", alt:"image"), class: "card-img-top" %>
+        <%= image_tag "https://source.unsplash.com/random", alt:"image" %>
       <% end %>
     </div>
     <li><%= @parking_lot.name %></li>
