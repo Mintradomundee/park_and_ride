@@ -8,13 +8,18 @@ class BookingsController < ApplicationController
     set_booking
     @parking_lot = @booking.parking_lot
   end
+
+  def new
+    @booking = Booking.new
+    authorize @booking
+  end
   
   def create
     @parking_lot = ParkingLot.find(params[:parking_lot_id])
     @booking = Booking.new(booking_params)
     @booking.parking_lot_id = @parking_lot_id
     @booking.user = current_user
-    # authorize @booking
+    authorize @booking
     start_time = @booking.start_time.to_datetime
     planned_end_time = @booking.planned_end_time.to_datetime
 
@@ -30,8 +35,8 @@ class BookingsController < ApplicationController
 
     if @booking.save
 
-      # flash[:notice] = "Booked Successfully!"
-      # redirect_to dashboard_path
+      flash[:notice] = "Booked Successfully!"
+      redirect_to dashboard_path
     else
       raise
     end
@@ -50,6 +55,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:parking_lot_id, :start_time, :planned_end_time)
+    params.require(:booking).permit(:parking_lot_id, :start_time, :planned_end_time, :vehicle)
   end
 end
