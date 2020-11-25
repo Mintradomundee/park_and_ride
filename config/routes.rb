@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :parking_lots do
     resources :reviews, only: [ :new, :create ]
+    resources :vehicles, only: [ :new, :create ]
   end
 end
