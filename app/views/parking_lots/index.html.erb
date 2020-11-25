@@ -6,7 +6,7 @@
       <%= cl_image_tag parking_lot.photo.key %>
     <% else %>
       <%#= cl_image_tag parking_lot.photo.key %>
-      <%= image_tag "https://source.unsplash.com/random", alt:"image" %>
+      <%= image_tag "https://source.unsplash.com/500x200/", alt:"image" %>
     <% end %>
   </div>
   <li><%= link_to parking_lot.name, parking_lot_path(parking_lot) %></li>
