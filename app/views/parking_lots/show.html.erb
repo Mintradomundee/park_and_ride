@@ -5,6 +5,13 @@
   <%#= image_tag("https://source.unsplash.com/random", alt:"image") %>
 <%# end %>
   <div>
+    <div>
+      <% if parking_lot.photo.attached? %>
+        <%= cl_image_tag parking_lot.photo.key, class: "card-img-top" %>
+      <% else %>
+        <%= image_tag ("https://source.unsplash.com/random", alt:"image"), class: "card-img-top" %>
+      <% end %>
+    </div>
     <li><%= @parking_lot.name %></li>
     <li><%= @parking_lot.address %></li>
     <li><%= @parking_lot.vehicle_type %></li>

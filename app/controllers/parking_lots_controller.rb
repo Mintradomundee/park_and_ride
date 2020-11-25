@@ -35,6 +35,7 @@ class ParkingLotsController < ApplicationController
     else
       render :new
     end
+  end
 
   def destroy
     @parking_lot = ParkingLot.find(params[:id])
@@ -45,6 +46,6 @@ class ParkingLotsController < ApplicationController
   private
 
   def parking_lot_params
-    params.require(:parking_lot).permit(:name, :address, :vehicle_type, :price)
+    params.require(:parking_lot).permit(:name, :address, :vehicle_type, :price, :photo)
   end
 end
