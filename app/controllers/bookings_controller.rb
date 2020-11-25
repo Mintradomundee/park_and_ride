@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     authorize @booking
   end
-  
+
   def create
     @parking_lot = ParkingLot.find(params[:parking_lot_id])
     @booking = Booking.new(booking_params)
@@ -55,6 +55,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:parking_lot_id, :start_time, :planned_end_time, :vehicle)
+    params.require(:booking).permit(:parking_lot_id, :start_time, :planned_end_time, :vehicle, :vehicle_type)
   end
 end

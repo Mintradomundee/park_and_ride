@@ -1,0 +1,7 @@
+<div>
+  <h2>Add your vehicle</h2>
+  <%= simple_form_for @vehicle do |f| %>
+    <%= f.input :vehicle_type, as: :select, collection: Vehicle::VEHICLE_TYPE %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
