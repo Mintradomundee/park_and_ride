@@ -12,5 +12,17 @@
   </div>
 </div>
 
+<div class="card-booking">
+      <% if current_user != @parking_lot.user%>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 p-3 mb-0">
+          <%= simple_form_for [@parking_lot, @booking] do |f| %>
+          <%= f.input :start_time, as: :datetime, placeholder: "Start Date"%>
+          <%= f.input :planned_end_time, as: :datetime,  placeholder: "End Date"%>
+          <%= f.submit 'Rent Parking lot', class: 'btn btn-success'%>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
 <p> <%= link_to "Add review", new_parking_lot_review_path(@parking_lot) %> </p>
 <p><%= link_to "Back to list", parking_lots_path %></p>
