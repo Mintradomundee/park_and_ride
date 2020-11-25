@@ -13,7 +13,7 @@ class ParkingLotsController < ApplicationController
   end
 
   def create
-    @parking_lot = ParkingLot.new
+    @parking_lot = ParkingLot.new(parking_lot_params)
     @parking_lot.user = current_user
     if @parking_lot.save
       redirect_to parking_lot_path(@parking_lot)

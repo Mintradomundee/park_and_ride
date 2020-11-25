@@ -5,6 +5,7 @@
     <% if parking_lot.photo.attached? %>
       <%= cl_image_tag parking_lot.photo.key %>
     <% else %>
+      <%#= cl_image_tag parking_lot.photo.key %>
       <%= image_tag "https://source.unsplash.com/random", alt:"image" %>
     <% end %>
   </div>
