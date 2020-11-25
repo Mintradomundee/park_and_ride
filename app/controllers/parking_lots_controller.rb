@@ -3,7 +3,7 @@ class ParkingLotsController < ApplicationController
   def index
   @parking_lots = ParkingLot.all
   end
-  
+
   def show
     @parking_lot = ParkingLot.find(params[:id])
   end
@@ -20,6 +20,12 @@ class ParkingLotsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @parking_lot = ParkingLot.find(params[:id])
+    @parking_lot.destroy
+    redirect_to parking_lots_path
   end
 
   private
