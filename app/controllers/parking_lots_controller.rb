@@ -16,7 +16,7 @@ class ParkingLotsController < ApplicationController
   end
 
   def create
-    @parking_lot = ParkingLot.new
+    @parking_lot = ParkingLot.new(parking_lot_params)
     @parking_lot.user = current_user
     authorize @parking_lot
     if @parking_lot.save
