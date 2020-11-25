@@ -7,9 +7,9 @@ class CreateBookings < ActiveRecord::Migration[6.0]
       t.integer :booked_price
       t.integer :late_fee
       t.boolean :paid
-      t.vehicle :references
-      t.parking_lot :references
-      t.user :references
+      t.references :vehicle
+      t.references :parking_lot
+      t.references :user
 
       t.timestamps
     end

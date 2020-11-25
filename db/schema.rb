@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_164308) do
+ActiveRecord::Schema.define(version: 2020_11_25_100054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "planned_end_time"
+    t.datetime "actual_end_time"
+    t.integer "booked_price"
+    t.integer "late_fee"
+    t.boolean "paid"
+    t.bigint "vehicle_id"
+    t.bigint "parking_lot_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parking_lot_id"], name: "index_bookings_on_parking_lot_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["vehicle_id"], name: "index_bookings_on_vehicle_id"
+  end
 
   create_table "parking_lots", force: :cascade do |t|
     t.string "name"
