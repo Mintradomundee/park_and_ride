@@ -22,6 +22,20 @@ class ParkingLotsController < ApplicationController
     end
   end
 
+  def edit
+    @parking_lot = ParkingLot.find(params[:id])
+    # authorize @parking_lot
+  end
+
+  def update
+    @parking_lot = ParkingLot.find(params[:id])
+    # authorize @parking_lot
+    if @parking_lot.update(parking_lot_params)
+      redirect_to parking_lot_path(@parking_lot)
+    else
+      render :new
+    end
+
   def destroy
     @parking_lot = ParkingLot.find(params[:id])
     @parking_lot.destroy

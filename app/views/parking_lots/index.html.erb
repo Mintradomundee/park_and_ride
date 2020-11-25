@@ -1,7 +1,10 @@
-<ul>
+<div>
 <% @parking_lots.each do |parking_lot| %>
-    <li>
-      <%= link_to parking_lot.name, parking_lot_path(parking_lot) %> | <%= parking_lot.address %> | <%= parking_lot.price %> | <%= parking_lot.vehicle_type %>   
-    </li>
+  <li><%= link_to parking_lot.name, parking_lot_path(parking_lot) %></li>
+  <li><%= parking_lot.address %></li>
+  <li><%= parking_lot.price %></li>
+  <li><%= parking_lot.vehicle_type %></li>   
+  <%=  link_to "Edit", edit_parking_lot_path(parking_lot), class: "btn btn-outline-success border-ra" %>
+  <br>
 <% end %>
-</ul>
+</div>
