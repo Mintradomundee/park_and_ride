@@ -5,29 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
-# require 'faker'
+Vehicle.destroy_all
+User.destroy_all
+ParkingLot.destroy_all
 
-# ParkingLot.destroy_all
-# User.destroy_all
-# puts "Parking lots and User destroyed"
+mintra = User.create!(
+  name: "Mintra",
+  email: "mintra@mintra.com",
+  password: "123456"
+)
+Vehicle.create!(
+  user: mintra,
+  vehicle_type: "Car",
+  license_plate: "1234BE"
+)
 
-# adam = User.create(
-#   email: "adam@adam.com",
-#   password: "123456"
-# )
+adam = User.create!(
+  name: "adam",
+  email: "adam@adam.com",
+  password: "123456"
+)
 
-# 10.times do
-
-#   parking_lots = ParkingLot.new(
-#     name: Faker::Name.name,
-#     address: Faker::Address.street_address,
-#     vehicle_type: Faker::Vehicle.drive_type,
-#     price: Faker::Commerce.price,
-#     user: adam
-#   )
-
-#   parking_lots.save!
-
-# end
-# puts 'Finished!'
+10.times do
+  parking_lots = ParkingLot.new(
+    name: Faker::Name.name,
+    address: Faker::Address.street_address,
+    vehicle_type: Faker::Vehicle.drive_type,
+    price: Faker::Commerce.price,
+    user: adam
+  )
+  parking_lots.save!
+end
+puts 'Finished!'
