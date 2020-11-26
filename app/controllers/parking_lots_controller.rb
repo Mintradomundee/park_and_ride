@@ -2,7 +2,15 @@ class ParkingLotsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-  @parking_lots = ParkingLot.all
+    @parking_lots = ParkingLot.all
+
+    @markers = @parking_lots.geocoded.map do |parking_lot|
+      {
+        lat: parking_lot.latitude,
+        lng: parking_lot.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { parking_lot: parking_lot })
+      }
+    end
   end
 
   def show

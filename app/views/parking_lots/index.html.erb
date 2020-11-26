@@ -1,19 +1,26 @@
 <%= link_to "Create New Parking Lot", new_parking_lot_path(@parking_lot), class: "btn btn-outline-success border-ra" %>
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <div>
-<% @parking_lots.each do |parking_lot| %>
-  <div>
-    <% if parking_lot.photo.attached? %>
-      <%= cl_image_tag parking_lot.photo.key %>
-    <% else %>
-      <%#= cl_image_tag parking_lot.photo.key %>
-      <%= image_tag "https://source.unsplash.com/500x200/", alt:"image" %>
-    <% end %>
-  </div>
-  <li><%= link_to parking_lot.name, parking_lot_path(parking_lot) %></li>
-  <li><%= parking_lot.address %></li>
-  <li><%= parking_lot.price %></li>
-  <li><%= parking_lot.vehicle_type %></li>   
-  <%=  link_to "Edit", edit_parking_lot_path(parking_lot), class: "btn btn-outline-success border-ra" %>
-  <br>
-<% end %>
+  <% @parking_lots.each do |parking_lot| %>
+    <div>
+      <% if parking_lot.photo.attached? %>
+        <%= cl_image_tag parking_lot.photo.key %>
+      <% else %>
+        <%#= cl_image_tag parking_lot.photo.key %>
+        <%= image_tag "https://source.unsplash.com/500x200/", alt:"image" %>
+      <% end %>
+    </div>
+    <li><%= link_to parking_lot.name, parking_lot_path(parking_lot) %></li>
+    <li><%= parking_lot.address %></li>
+    <li><%= parking_lot.price %></li>
+    <li><%= parking_lot.vehicle_type %></li>   
+    <%=  link_to "Edit", edit_parking_lot_path(parking_lot), class: "btn btn-outline-success border-ra" %>
+    <br>
+  <% end %>
 </div>
