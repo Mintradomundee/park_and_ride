@@ -5,14 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 require 'faker'
 
-ParkingLot.destroy_all
+Vehicle.destroy_all
 User.destroy_all
-puts "Parking lots and User destroyed"
+ParkingLot.destroy_all
 
-adam = User.create(
+mintra = User.create!(
+  name: "Mintra",
+  email: "mintra@mintra.com",
+  password: "123456"
+)
+Vehicle.create!(
+  user: mintra,
+  vehicle_type: "Car",
+  license_plate: "1234BE"
+)
+
+adam = User.create!(
+  name: "adam",
+
   email: "adam@adam.com",
   password: "123456"
 )
@@ -28,6 +40,5 @@ adam = User.create(
   )
 
   parking_lots.save!
-
 end
 puts 'Finished!'
