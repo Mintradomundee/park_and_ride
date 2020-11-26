@@ -8,7 +8,7 @@
 require 'faker'
 
 Vehicle.destroy_all
-User.destroy_all
+#User.destroy_all
 ParkingLot.destroy_all
 
 mintra = User.create!(
@@ -22,9 +22,19 @@ Vehicle.create!(
   license_plate: "1234BE"
 )
 
+sarah = User.create!(
+  name: "Mintra",
+  email: "sarah@sarah.com",
+  password: "123456"
+)
+Vehicle.create!(
+  user: sarah,
+  vehicle_type: "Car",
+  license_plate: "1235CE"
+)
+
 adam = User.create!(
   name: "adam",
-
   email: "adam@adam.com",
   password: "123456"
 )

@@ -17,9 +17,10 @@ class ParkingLotsController < ApplicationController
         lng: parking_lot.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { parking_lot: parking_lot })
       }
+    end
   end
 
-  
+
   def show
     @parking_lot = ParkingLot.find(params[:id])
     @booking = Booking.new
