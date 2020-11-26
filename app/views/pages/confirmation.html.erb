@@ -1,1 +1,11 @@
 <h2>Confirmation Details<h2>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <p>Start time <%= booking.start_time %></p>
+      <p>End time <%= booking.planned_end_time %></p>
+      <p>Total time <%= (booking.planned_end_time - booking.start_time)/3600  %>hr.</p>
+      <p>Price <%= booking.booked_price %></p>
+    </li>
+  <% end %>
+</ul>
