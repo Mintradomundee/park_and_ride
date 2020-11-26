@@ -25,7 +25,7 @@
           <%= simple_form_for [@parking_lot, @booking] do |f| %>
           <%= f.input :start_time, as: :datetime, placeholder: "Start Date"%>
           <%= f.input :planned_end_time, as: :datetime,  placeholder: "End Date"%>
-          <%= f.input :vehicle, collection: current_user.vehicles %>
+          <%= f.association :vehicle, collection: current_user.vehicles, label_method: :license_plate %>
           <%= f.submit 'Rent Parking lot', class: 'btn btn-success'%>
           <% end %>
         </div>
