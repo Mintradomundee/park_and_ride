@@ -2,9 +2,18 @@ class ParkingLotsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-  @parking_lots = ParkingLot.all
+    if params[:query].present?
+      sql_query = " \
+      name ILIKE :query \
+      OR address ILIKE :query \
+      "
+      @parking_lots = ParkingLot.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @parking_lots = ParkingLot.all
+    end
   end
 
+  
   def show
     @parking_lot = ParkingLot.find(params[:id])
     @booking = Booking.new
