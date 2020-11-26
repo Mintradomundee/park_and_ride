@@ -11,6 +11,12 @@ class ParkingLotsController < ApplicationController
     else
       @parking_lots = ParkingLot.all
     end
+    @markers = @parking_lots.geocoded.map do |parking_lot|
+      {
+        lat: parking_lot.latitude,
+        lng: parking_lot.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { parking_lot: parking_lot })
+      }
   end
 
   

@@ -24,11 +24,13 @@ Vehicle.create!(
 
 adam = User.create!(
   name: "adam",
+
   email: "adam@adam.com",
   password: "123456"
 )
 
 10.times do
+
   parking_lots = ParkingLot.new(
     name: Faker::Name.name,
     address: Faker::Address.street_address,
@@ -36,6 +38,7 @@ adam = User.create!(
     price: Faker::Commerce.price,
     user: adam
   )
+
   parking_lots.save!
 end
 puts 'Finished!'
