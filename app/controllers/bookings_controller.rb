@@ -50,7 +50,7 @@ class BookingsController < ApplicationController
     # price = @parking_lot.price
     # start_time = @booking.start_time
     # planned_end_time = @booking.planned_end_time
-    hour = ((planned_end_time - start_time)/1.hour).round
+    hour = (planned_end_time.hour) - (start_time.hour)
     total_price = hour * price.to_i
     total_price.to_i
   end
