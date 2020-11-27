@@ -64,6 +64,53 @@
   transition-delay: 0.3s;
 }
 
+.history-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 500px;
+  text-align: right;
+  p {
+    font-size: 15px;
+  }
+}
+
+.bullet {
+  list-style-type: none;
+}
+
+.parkicon {
+  color: $main-blue;
+  position: relative;
+  left: -400px;
+  top: -130px;
+}
+
+.time {
+  position: relative;
+  left: -200px;
+  bottom: -100px;
+}
+
+.total-time {
+  position: relative;
+  left: -230px;
+  top: -50px;
+  color: $text-gray;
+  font-weight: bold;
+}
+
+.total-price {
+  position: relative;
+  left: -100px;
+  top: -85px;
+  font-weight: bold;
+  color: $text-gray;
+}
+
 .container .card .title {
   position: relative;
   bottom: 20px;
@@ -75,3 +122,5 @@
   }
 }
 
+  margin-top: 16px;
+}

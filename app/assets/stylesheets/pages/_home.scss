@@ -1,18 +1,18 @@
 // Specific CSS for your home-page
 
-.subbanner {
-    color: white;
-    background-color: black;
+.card-container {
+    margin: 0 auto;
+    width: 600px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+  
+  .card-description {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    background: white;
+    border-radius: 70px 70px 0 0;  
     text-align: center;
-    padding: 30px;
-    
-}
-
-.btn {
-    color: black;
-    background-color: yellow;
-}
-
-.container {
-    width: 800px
-}
+  }
