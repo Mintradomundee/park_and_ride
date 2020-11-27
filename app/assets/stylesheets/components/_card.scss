@@ -45,7 +45,7 @@
 .container .card .content {
   position: relative;
   margin-top: -140px;
-  padding: 10px 15px;
+  padding: 4px 15px;
   visibility: hidden;
   opacity: 0;
   transition: 0.3s ease-in-out;
@@ -54,12 +54,15 @@
   }
 }
 
-
-
 .container .card:hover .content {
   visibility: visible;
   opacity: 1;
   margin-top: -40px;
   transition-delay: 0.3s;
+}
+
+.container .card .title {
+  display: flex;
+  margin-top: 16px;
 }
 

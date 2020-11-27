@@ -27,10 +27,12 @@
         <% end %>
       </div>
       <div class="content">
-        <h5><%= link_to parking_lot.name, parking_lot_path(parking_lot) %></h5>
         <p><%= parking_lot.address %></p>
-        <p>Type: <%= parking_lot.vehicle_type %></p>   
-        <p class="card-parking-lot-pricing">$<%= parking_lot.price %> /hour</p>
+        <p>We are located near downtown and open 24 hour from monday-saturday.</p>   
+      </div>
+      <div class="title">
+        <h5><%= link_to parking_lot.name, parking_lot_path(parking_lot) %></h5>
+        <p class="card-parking-lot-pricing">$<%= parking_lot.price %> /Hr</p>
       </div>
     </div>
   <% end %>
