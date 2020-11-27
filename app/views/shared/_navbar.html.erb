@@ -12,14 +12,14 @@
         <%# <%<li class="nav-item active"> %>
           <%# <%= link_to "Hi, #{current_user.name}", "#", class: "nav-link" %>
         <%# </li> %>
-        <%# <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        <%# </li> %>
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
           <%= link_to "Parking Lots", parking_lots_path, class: "nav-link mr-2" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Create New Parking Lot", new_parking_lot_path(@parking_lot), class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
         </li>
