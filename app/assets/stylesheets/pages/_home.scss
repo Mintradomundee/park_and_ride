@@ -1,18 +1,20 @@
 // Specific CSS for your home-page
 
-.card-container {
-    margin: 0 auto;
-    width: 600px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  }
-  
-  .card-description {
+  .home-card-description {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 120px;
     overflow: hidden;
     background: white;
     border-radius: 70px 70px 0 0;  
     text-align: center;
   }
+
+.card-black {
+    background-color: black;
+    color: white;
+}
+
+.yellow {
+  background-color: #F5D21F;
+  border: #F5D21F;
+}
