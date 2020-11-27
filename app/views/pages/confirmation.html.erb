@@ -1,11 +1,16 @@
-<h2>Confirmation Details<h2>
-<ul>
-  <% @bookings.each do |booking| %>
-    <li>
-      <p>Start time <%= booking.start_time %></p>
-      <p>End time <%= booking.planned_end_time %></p>
-      <p>Total time <%= (booking.planned_end_time - booking.start_time)/3600  %>hr.</p>
-      <p>Price <%= booking.booked_price %></p>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <h2>Confirmation Details<h2>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li class="bullet">
+      <div class="history-card">
+        <p class="time">Start time <%= booking.start_time %></p>
+        <p class="time">End time <%= booking.planned_end_time %></p>
+        <p class="total-time">Total time <%= (booking.planned_end_time - booking.start_time)/3600  %>hr.</p>
+        <p class="total-price">Price $<%= booking.booked_price %></p>
+        <i class="fas fa-parking parkicon"></i>
+      </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
