@@ -17,7 +17,8 @@ class ParkingLotsController < ApplicationController
       {
         lat: parking_lot.latitude,
         lng: parking_lot.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { parking_lot: parking_lot })
+        infoWindow: render_to_string(partial: "info_window", locals: { parking_lot: parking_lot }),
+        image_url: helpers.asset_url('marker.png')
       }
     end
   end
