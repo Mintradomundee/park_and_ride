@@ -16,20 +16,23 @@
   </div>
  <% end %>
 
-<% @parking_lots.each do |parking_lot| %>
-  <div>
-    <% if parking_lot.photo.attached? %>
-      <%= cl_image_tag parking_lot.photo.key %>
-    <% else %>
-      <%#= cl_image_tag parking_lot.photo.key %>
-      <%= image_tag "https://source.unsplash.com/500x200/", alt:"image" %>
-    <% end %>
-  </div>
-  <li><%= link_to parking_lot.name, parking_lot_path(parking_lot) %></li>
-  <li><%= parking_lot.address %></li>
-  <li><%= parking_lot.price %></li>
-  <li><%= parking_lot.vehicle_type %></li>   
-  <%=  link_to "Edit", edit_parking_lot_path(parking_lot), class: "btn btn-outline-success border-ra" %>
-  <br>
-<% end %>
+<div class="container">
+  <% @parking_lots.each do |parking_lot| %>
+    <div class="card">
+      <div class="imgBx">
+        <% if parking_lot.photo.attached? %>
+          <img><%= cl_image_tag parking_lot.photo.key %>
+        <% else %>
+          <img><%= image_tag "https://images.unsplash.com/photo-1498544921269-5a3045edb62e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80", class: "card-img-top", alt:"image" %>
+        <% end %>
+      </div>
+      <div class="content">
+        <h5><%= link_to parking_lot.name, parking_lot_path(parking_lot) %></h5>
+        <p><%= parking_lot.address %></p>
+        <p>Type: <%= parking_lot.vehicle_type %></p>   
+        <p class="card-parking-lot-pricing">$<%= parking_lot.price %> /hour</p>
+      </div>
+    </div>
+  <% end %>
 </div>
+  <%=  link_to "Edit", edit_parking_lot_path(@parking_lots), class: "btn btn-outline-success border-ra" %>

@@ -22,7 +22,7 @@ class ParkingLotsController < ApplicationController
     end
   end
 
-  
+
   def show
     @parking_lot = ParkingLot.find(params[:id])
     @booking = Booking.new
