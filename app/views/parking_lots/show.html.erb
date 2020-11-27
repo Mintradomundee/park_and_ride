@@ -4,6 +4,7 @@
 <%# else %>
   <%#= image_tag("https://source.unsplash.com/random", alt:"image") %>
 <%# end %>
+  
   <% if @parking_lot.photo.attached? %>
     <%= cl_image_tag @parking_lot.photo.key, class: 'card-img' %>
   <% else %>
@@ -17,7 +18,7 @@
     <li><i class="fas fa-shoe-prints fa-rotate-270 iconcolor"></i></li>
     <li class="distance"><p>500m from destination</p></li>
     <li><i class="fas fa-parking fa-2x changeicon"></i></li>
-    <li class="spot-left"><p>5 spots</p></li>
+    <li class="spot-left"><p>5 spots</p></li>   
   </div>
 
   <div class="card-booking">
