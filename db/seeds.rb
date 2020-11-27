@@ -10,6 +10,7 @@ require 'faker'
 Vehicle.destroy_all
 #User.destroy_all
 ParkingLot.destroy_all
+User.delete_all
 
 mintra = User.create!(
   name: "Mintra",
