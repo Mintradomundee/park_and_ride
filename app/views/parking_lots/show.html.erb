@@ -15,15 +15,15 @@
   <% else %>
     <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
   <% end %>
-  <div class="card-description">
-    <li class="card-name"><%= @parking_lot.name %></li>
-    <li class="card-address"><%= @parking_lot.address %></li>
-    <%#= @parking_lot.vehicle_type %>
-    <li class="card-price">$<%= @parking_lot.price %>/Hr</li>
-    <li><i class="fas fa-shoe-prints fa-rotate-270 iconcolor"></i></li>
-    <li class="distance"><p>500m from destination</p></li>
-    <li><i class="fas fa-parking fa-2x changeicon"></i></li>
-    <li class="spot-left"><p>5 spots</p></li>
+  <div class="show-card-description">
+      <div class="card-name"><%= @parking_lot.name %></div>
+      <div class="card-address"><%= @parking_lot.address %></div>
+      <%#= @parking_lot.vehicle_type %>
+      <div class="card-price">$<%= @parking_lot.price %>/Hr</div>
+      <div><i class="fas fa-shoe-prints fa-rotate-270 iconcolor"></i></div>
+      <div class="distance"><p>500m from destination</p></div>
+      <div><i class="fas fa-parking fa-2x changeicon"></i></div>
+      <div class="spot-left"><p>5 spots</p></div>
   </div>
 
   <div class="card-booking">
