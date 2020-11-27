@@ -9,7 +9,7 @@
       <% if @parking_lot.photo.attached? %>
         <%= cl_image_tag @parking_lot.photo.key %>
       <% else %>
-        <%= image_tag "https://source.unsplash.com/500x200/", alt:"image" %>
+        <%= image_tag "https://images.unsplash.com/photo-1498544921269-5a3045edb62e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80", alt:"image" %>
       <% end %>
     </div>
     <li><%= @parking_lot.name %></li>
