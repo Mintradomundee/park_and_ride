@@ -10,6 +10,7 @@ class VehiclesController < ApplicationController
       redirect_to new_user_registration_path
     else
       render :new
+    end
   end
 
   private
