@@ -1,0 +1,24 @@
+.btn-book {
+  border: 2px solid $yellow;
+  background-color: $yellow;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.btn-contact {
+  color: white;
+  border: 2px solid $dark-grey;
+  background-color: $dark-grey;
+  border-radius: 5px;
+  padding: 13px 40px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    opacity: 0.9;
+  }
+}

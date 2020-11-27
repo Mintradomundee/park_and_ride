@@ -1,36 +1,41 @@
-<div>
+<div class="card-container">
 <%# if @parking_lot.photo.attached? %>
   <%#= cl_image_tag @pokemon.photo.key%>
 <%# else %>
   <%#= image_tag("https://source.unsplash.com/random", alt:"image") %>
 <%# end %>
-  <div>
-    <div>
-      <% if @parking_lot.photo.attached? %>
-        <%= cl_image_tag @parking_lot.photo.key %>
-      <% else %>
-        <%= image_tag "https://source.unsplash.com/500x200/", alt:"image" %>
-      <% end %>
-    </div>
-    <li><%= @parking_lot.name %></li>
-    <li><%= @parking_lot.address %></li>
-    <li><%= @parking_lot.vehicle_type %></li>
-    <li><%= @parking_lot.price %></li>
+  <% if @parking_lot.photo.attached? %>
+    <%= cl_image_tag @parking_lot.photo.key, class: 'card-img' %>
+  <% else %>
+    <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
+  <% end %>
+  <div class="card-description">
+    <li class="card-name"><%= @parking_lot.name %></li>
+    <li class="card-address"><%= @parking_lot.address %></li>
+    <%#= @parking_lot.vehicle_type %>
+    <li class="card-price">$<%= @parking_lot.price %>/Hr</li>
+    <li><i class="fas fa-shoe-prints fa-rotate-270 iconcolor"></i></li>
+    <li class="distance"><p>500m from destination</p></li>
+    <li><i class="fas fa-parking fa-2x changeicon"></i></li>
+    <li class="spot-left"><p>5 spots</p></li>
+  </div>
+
+  <div class="card-booking">
+    <% if current_user != @parking_lot.user%>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 p-3 mb-0">
+        <%= simple_form_for [@parking_lot, @booking] do |f| %>
+        <%= f.input :start_time, as: :datetime, placeholder: "Start Date"%>
+        <%= f.input :planned_end_time, as: :datetime,  placeholder: "End Date"%>
+        <%= f.association :vehicle, collection: current_user.vehicles, label_method: :license_plate %>
+        <div class="buttons">
+          <%= f.submit 'Book', class: 'btn-book'%>
+          <a class="btn-contact" href="#">Contact</a>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
-
-<div class="card-booking">
-      <% if current_user != @parking_lot.user%>
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 p-3 mb-0">
-          <%= simple_form_for [@parking_lot, @booking] do |f| %>
-          <%= f.input :start_time, as: :datetime, placeholder: "Start Date"%>
-          <%= f.input :planned_end_time, as: :datetime,  placeholder: "End Date"%>
-          <%= f.association :vehicle, collection: current_user.vehicles, label_method: :license_plate %>
-          <%= f.submit 'Rent Parking lot', class: 'btn btn-success'%>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
 
 <p><%= link_to "Delete", parking_lot_path(@parking_lot), method: :delete, data: { confirm: "Are you sure you?" } %>
 <p> <%= link_to "Add review", new_parking_lot_review_path(@parking_lot) %> </p>
