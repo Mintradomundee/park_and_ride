@@ -43,7 +43,7 @@ parking_lots = ParkingLot.create!(
   name: "Pergamonmuseum",
   address: "Bodestraße 1-3, 10178 Berlin",
   vehicle_type: "car",
-  price: 7,
+  price: 1,
   user: adam
 )
 
@@ -51,7 +51,7 @@ parking_lots = ParkingLot.create!(
   name: "Institut für Zeitgenössische Kunst",
   address: "Auguststraße 69, 10117 Berlin",
   vehicle_type: "car",
-  price: 5,
+  price: 2,
   user: adam
 )
 
@@ -59,7 +59,7 @@ parking_lots = ParkingLot.create!(
   name: "Brandenburger Tor",
   address: "Pariser Platz, 10117 Berlin",
   vehicle_type: "car",
-  price: 8,
+  price: 1,
   user: adam
 )
 
@@ -67,7 +67,7 @@ parking_lots = ParkingLot.create!(
   name: "Tränenpalast",
   address: "Reichstagufer 17, 10117 Berlin",
   vehicle_type: "car",
-  price: 10,
+  price: 3,
   user: adam
 )
 
@@ -75,7 +75,7 @@ parking_lots = ParkingLot.create!(
   name: "Reichstagsgebäude",
   address: "Platz der Republik 1, 11011 Berlin",
   vehicle_type: "car",
-  price: 12,
+  price: 1,
   user: adam
 )
 
@@ -83,7 +83,7 @@ parking_lots = ParkingLot.create!(
   name: "Berliner Dom",
   address: "Am Lustgarten, 10178 Berlin",
   vehicle_type: "car",
-  price: 9,
+  price: 2,
   user: adam
 )
 
@@ -91,7 +91,7 @@ parking_lots = ParkingLot.create!(
   name: "Le Wagon Parking",
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
   vehicle_type: "car",
-  price: 2,
+  price: 1,
   user: adam
 )
 
