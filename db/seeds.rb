@@ -39,11 +39,11 @@ adam = User.create!(
   password: "123456"
 )
 
-10.times do
+30.times do
 
   parking_lots = ParkingLot.new(
     name: Faker::Name.name,
-    address: Faker::Address.street_address,
+    address: Faker::Address.city,
     vehicle_type: Faker::Vehicle.drive_type,
     price: Faker::Commerce.price,
     user: adam

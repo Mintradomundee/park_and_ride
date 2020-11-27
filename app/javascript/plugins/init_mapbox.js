@@ -5,11 +5,14 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/nikolas224/ckhz1f8d31ohn1bqur2lueonj' //change link for different style
+    style: 'mapbox://styles/nikolas224/ckhz1f8d31ohn1bqur2lueonj', //change link for different style
+    center: [13.404954, 52.520008],
+    zoom: 11.5,
+    attributionControl: false
   });
 };
 
-const addMarkersToMap = (map, markers) => {
+const addMarkersToMap = (map, markers) => { //markers
   markers.forEach((marker) => {
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
@@ -28,10 +31,10 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap(mapElement);
     const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers);
+    addMarkersToMap(map, markers); //markers
     fitMapToMarkers(map, markers);
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl }));
+    // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    //  mapboxgl: mapboxgl }));
   }
 };
 
