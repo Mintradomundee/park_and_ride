@@ -1,14 +1,44 @@
-<%# <div>
+  <div>
+  <% #banner %>
+  </div>
+
+  <div class="container">
+  <div class="subbanner">
   <h1>EasyPark</h1>
-  <h2>Fast & Convinient</h2>
+  <h4>The most convenient way of parking!</h4>
+  </div>
+  
   <div class="card-homepage">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 p-3 mb-0">
-        <%= simple_form_for @parking_lot do |f| %>
-        <%#= f.input :address, placeholder: "Location" %>
-        <%#= f.input :start_time, as: :datetime, placeholder: "Start Date"%>
-        <%#= f.input :planned_end_time, as: :datetime,  placeholder: "End Date"%>
-        <%#= f.input :vehicle, collection: current_user.vehicles %>
-        <%#= f.submit 'search', class: 'btn btn-success'%>
-      <%# </div>
+    <%= form_tag parking_lots_path, method: :get do %>
+    <%= text_field_tag :query, 
+      params[:query],
+      class: "form-control",
+      label_tag: "Location",
+      placeholder: "Where do you want to park?"
+    %>
+    <div class="d-flex">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      label_tag: "Start time",
+      placeholder: "12:00"
+    %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      label_tag: "Ende time",
+      placeholder: "13:00"
+    %>
+    </div>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      label_tag: "Your vehicle type",
+      placeholder: "Car"
+    %>
+    <%= submit_tag "Search", class: "btn btn-warning form-control" %>
     <% end %>
+  </div>
+  </div>
+
 
