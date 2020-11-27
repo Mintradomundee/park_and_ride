@@ -6,7 +6,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-description {
+.show-card-description {
   height: 150px;
   padding-top: 15px;
   list-style-type: none;
@@ -47,9 +47,9 @@
 .card-price {
   font-size: 25px;
   float: right;
-  position: relative;
-  left: -60px;
-  top: -60px;
+  position: absolute;
+  right: 84px;
+  top: 60px;
 }
 
 .iconcolor {
