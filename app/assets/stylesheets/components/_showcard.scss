@@ -1,23 +1,15 @@
-.card-container {
-  margin: 0 auto;
-  width: 600px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
 .show-card-description {
-  height: 150px;
-  padding-top: 15px;
+  height: 120px;
   list-style-type: none;
   overflow: hidden;
   background: white;
   border-radius: 70px 70px 0 0;
   position: relative;
-  top: -50px;
+  top: -60px;
   .card-name {
     position: relative;
-    font-size: 30px;
+    font-size: 3vh;
+    margin-top: 30px;
     right: -60px;
     font-weight: bold;
   }
@@ -28,14 +20,14 @@
   height: 100%;
   border-radius: 40px 40px 0 0;
   position: relative;
-  bottom: -20px;
 }
 
 .card-booking {
-  overflow: hidden;
   background: white;
   display: flex;
   justify-content: center;
+  position: relative;
+  top: -60px;
 }
 
 .card-address {
@@ -46,37 +38,7 @@
 
 .card-price {
   font-size: 25px;
-  float: right;
   position: absolute;
-  right: 84px;
-  top: 60px;
-}
-
-.iconcolor {
-  margin-top: 40px;
-  color: $text-gray;
-  position: relative;
-  right: -60px;
-}
-
-.distance {
-  position: relative;
-  right: -90px;
-  color: $text-gray;
-  top: -25px;
-}
-
-.changeicon {
-  color: $main-blue;
-  position: relative;
-  right: -450px;
-  top: -70px;
-}
-
-.spot-left {
-  color: $bright-green;
-  position: relative;
-  right: -500px;
-  top: -100px;
-  font-weight: bold;
+  right: 30px;
+  top: 30px;
 }
