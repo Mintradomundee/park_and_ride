@@ -1,21 +1,21 @@
 
 <div class="bg-white">
   <div id="map"
-      style="width: 100%; height: 400px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
   <div class="home-card-description card-black">
-    <h1>EasyPark</h1>
-    <h4>The most convenient way of parking!</h4>
+    <h2>EasyPark</h2>
+    <h4>Fast & Convenient</h4>
   </div>
+  <div class="search-form">
     <%= form_tag parking_lots_path, method: :get do %>
     <%= text_field_tag :query, 
       params[:query],
       class: "form-control",
       label_tag: "Location",
-      placeholder: "Where do you want to park?"
+      placeholder: "Location"
     %>
     <div class="d-flex">
     <%= text_field_tag :query,
@@ -53,6 +53,7 @@
     %>
     <%= submit_tag "Search", class: "btn btn-warning form-control yellow" %>
     <% end %>
+  </div>
 </div>
   
 
