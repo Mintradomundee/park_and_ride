@@ -18,32 +18,17 @@
       placeholder: "Location"
     %>
     <div class="d-flex">
-    <%= text_field_tag :start_date,
-      params[:start_date],
+    <%= text_field_tag :start_time,
+      params[:start_time],
       class: "datepicker bg-white",
       label_tag: "From",
       placeholder: "From"
     %>
-    <%= text_field_tag :planned_end_date,
-      params[:planned_end_date],
+    <%= text_field_tag :planned_end_time,
+      params[:planned_end_time],
       class: "datepicker bg-white",
       label_tag: "To",
       placeholder: "To"
-    %>
-    </div>
-    <div class="d-flex">
-    <%= text_field_tag :start_time,
-      params[:start_time],
-      class: "form-control",
-      label_tag: "Start time",
-      placeholder: "12:00"
-    %>
-    <%= text_field_tag :end_time,
-      params[:end_time],
-      class: "form-control",
-      label_tag: "End time",
-      placeholder: "13:00"
-
     %>
     </div>
     <%= text_field_tag :vehicle_type,

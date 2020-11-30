@@ -38,12 +38,11 @@
     <div class="col-12 col-md-6 col-lg-10 p-3">
       <%= form_for [@parking_lot, @booking] do |f|  %>
       <%#= f.input :start_time, placeholder: "Start Date", value: params[:start_time] %>
-        <%= f.hidden_field :start_time, value: params[:start_time].to_time %>
-        <%#= f.hidden_field :start_date, params[:start_date] %>
-        <%#= f.hidden_field :end_date, params[:end_date] %>
+        <%= f.hidden_field :start_time, value: params[:start_time] %>
+        <%= f.hidden_field :planned_end_time,  value: params[:planned_end_time] %>
         <%= f.submit 'Book', class: 'btn-book' %>
-      <%#= f.input :planned_end_time,  placeholder: "End Date" %>
       <%#= simple_form_for [@parking_lot, @booking] do |f| %>
+        <%= f.collection_select :vehicle, current_user.vehicles, :id, :license_plate %>
         <%#= f.association :vehicle, collection: current_user.vehicles, label_method: :license_plate %>
       <%# end %>
       <% end %>

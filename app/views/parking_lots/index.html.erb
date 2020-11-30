@@ -34,7 +34,7 @@
           <p>We are located near downtown and open 24 hour from monday-saturday.</p>
         </div>
         <div class="title">
-          <h5><%= link_to parking_lot.name[0...17], parking_lot_path(parking_lot, start_time: params[:start_time], end_time: params[:end_time], start_date: params[:start_date], end_date: params[:end_date]) %></h5>
+          <h5><%= link_to parking_lot.name[0...17], parking_lot_path(parking_lot, start_time: params[:start_time], planned_end_time: params[:planned_end_time]) %></h5>
           <p class="card-parking-lot-pricing"><%= humanized_money_with_symbol(parking_lot.price) %> /Hr</p>
         </div>
     </div>

@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     @parking_lot = ParkingLot.find(params[:parking_lot_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.vehicle = Vehicle.find(params[:booking][:vehicle])
 
 
     @booking.parking_lot = @parking_lot
@@ -27,7 +28,7 @@ class BookingsController < ApplicationController
     @booking.booked_price = total_price(price, start_time, planned_end_time)
     authorize @booking
     if @parking_lot.available?(start_time, planned_end_time)
-      if @booking.save
+      if @booking.save!
         flash[:notice] = "Booked Successfully!"
         redirect_to confirmation_path
       else
@@ -61,7 +62,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    #params["start_time"] = Date.strptime(params["start_time"], "%m/%d/%Y").to_s
     params.require(:booking).permit(:parking_lot_id, :start_time, :planned_end_time)
   end
 end
