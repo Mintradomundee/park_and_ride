@@ -28,6 +28,7 @@ import flatpickr from "flatpickr";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import "../plugins/flatpickr"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
