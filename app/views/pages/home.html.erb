@@ -20,29 +20,15 @@
     <div class="d-flex">
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
-      label_tag: "Day Start",
-      placeholder: "11/27/2020"
+      class: "datepicker bg-white",
+      label_tag: "From",
+      placeholder: "From"
     %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
-      label_tag: "Day End",
-      placeholder: "11/27/2020"
-    %>
-    </div>
-    <div class="d-flex">
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      label_tag: "Start time",
-      placeholder: "12:00"
-    %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      label_tag: "Ende time",
-      placeholder: "13:00"
+      class: "datepicker bg-white",
+      label_tag: "To",
+      placeholder: "To"
     %>
     </div>
     <%= text_field_tag :query,
@@ -51,9 +37,6 @@
       label_tag: "Your vehicle type",
       placeholder: "Car"
     %>
-    <%= submit_tag "Search", class: "btn btn-warning form-control yellow" %>
+    <%= submit_tag "Search", class: "btn btn-warning form-control yellow margin-search" %>
     <% end %>
-  </div>
-</div>
-  
-
+    </div>
