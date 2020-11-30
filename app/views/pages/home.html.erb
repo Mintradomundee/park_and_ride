@@ -13,29 +13,23 @@
     <%= form_tag parking_lots_path, method: :get do %>
     <%= text_field_tag :query, 
       params[:query],
-      class: "form-control",
-      label_tag: "Location",
-      placeholder: "Location"
-    %>
-    <div class="d-flex">
-    <%= text_field_tag :query,
-      params[:query],
-      class: "datepicker bg-white",
-      label_tag: "From",
-      placeholder: "From"
+      class: "form-control text-align",
+      placeholder: "Your Destination"
     %>
     <%= text_field_tag :query,
       params[:query],
-      class: "datepicker bg-white",
-      label_tag: "To",
-      placeholder: "To"
+      class: "datepicker bg-white text-align",
+      placeholder: "Start Time"
     %>
-    </div>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
-      label_tag: "Your vehicle type",
-      placeholder: "Car"
+      class: "datepicker bg-white text-align",
+      placeholder: "End Time"
+    %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control text-align",
+      placeholder: "Yehicle Type"
     %>
     <%= submit_tag "Search", class: "btn btn-warning form-control yellow margin-search" %>
     <% end %>
