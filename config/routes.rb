@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/confirmation', to:'pages#confirmation'
   get '/history', to:'pages#history'
+  # get '/new', to:'reviews#new'
+  # get '/show', to: 'reviews#show'
 
   resources :parking_lots do
-    resources :reviews, only: [ :new, :create ]
+    resources :reviews, only: [ :new, :show, :create ]
     resources :vehicles, only: [ :new, :create ]
     resources :bookings, only: [:index, :show, :create, :destroy]
   end
