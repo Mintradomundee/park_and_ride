@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Reviews<h2>
+  <p><%= parking_lot.name %></p>
+  <p><%= parking_lot.address %></p>
+  <%= reviews.rating_star %>
+  <ul>
+    <% @reviews.each do |booking| %>
+      <li class="bullet">
+      <div class="review-card">
+        <%= reviews.content %>
+      </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
