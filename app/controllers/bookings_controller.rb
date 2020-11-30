@@ -19,16 +19,22 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
 
+    
     @booking.parking_lot = @parking_lot
     start_time = @booking.start_time.to_datetime
     planned_end_time = @booking.planned_end_time.to_datetime
     price = @parking_lot.price
     @booking.booked_price = total_price(price, start_time, planned_end_time)
     authorize @booking
-    if @booking.save
-      flash[:notice] = "Booked Successfully!"
-      redirect_to confirmation_path
+    if @parking_lot.available?(start_time, planned_end_time)
+      if @booking.save
+        flash[:notice] = "Booked Successfully!"
+        redirect_to confirmation_path
+      else
+        render "parking_lots/show"
+      end
     else
+      flash[:notice] = "Your time slot is not available!"
       render "parking_lots/show"
     end
   end
