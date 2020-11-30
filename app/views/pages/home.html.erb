@@ -11,26 +11,27 @@
   </div>
   <div class="search-form">
     <%= form_tag parking_lots_path, method: :get do %>
-    <%= text_field_tag :query, 
+    <%= text_field_tag :query,
       params[:query],
       class: "form-control text-align",
       placeholder: "Your Destination"
     %>
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :start_time,
+      params[:start_time],
       class: "datepicker bg-white text-align",
       placeholder: "Start Time"
     %>
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :planned_end_time,
+      params[:planned_end_time],
       class: "datepicker bg-white text-align",
       placeholder: "End Time"
     %>
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :vehicle_type,
+      params[:vehicle_type],
       class: "form-control text-align",
       placeholder: "Yehicle Type"
     %>
     <%= submit_tag "Search", class: "btn btn-warning form-control yellow margin-search" %>
     <% end %>
-    </div>
+  </div>
+</div>
