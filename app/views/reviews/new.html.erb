@@ -1,5 +1,10 @@
-<%= simple_form_for([@parking_lot, @review]) do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating_star %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <h2>Thank you, we hope you enjoy the parking lot!<h2>
+  <ul>
+    <%= simple_form_for([@parking_lot, @review]) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating_star %>
+      <%= f.submit %>
+    <% end %>
+  </ul>
+</div>
