@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_102748) do
+ActiveRecord::Schema.define(version: 2020_11_30_104108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,13 +56,14 @@ ActiveRecord::Schema.define(version: 2020_11_26_102748) do
   create_table "parking_lots", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.integer "price"
     t.string "vehicle_type"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "sku"
+    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_parking_lots_on_user_id"
   end
 

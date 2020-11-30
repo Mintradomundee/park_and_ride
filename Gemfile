@@ -26,6 +26,7 @@ gem 'faker'
 gem 'pundit'
 gem 'geocoder'
 gem 'flatpickr_rails'
+gem 'money-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
