@@ -20,15 +20,15 @@
     <div class="d-flex">
     <%= text_field_tag :start_date,
       params[:start_date],
-      class: "form-control",
-      label_tag: "Day Start",
-      placeholder: "27/11/2020"
+      class: "datepicker bg-white",
+      label_tag: "From",
+      placeholder: "From"
     %>
     <%= text_field_tag :planned_end_date,
       params[:planned_end_date],
-      class: "form-control",
-      label_tag: "Day End",
-      placeholder: "27/11/2020"
+      class: "datepicker bg-white",
+      label_tag: "To",
+      placeholder: "To"
     %>
     </div>
     <div class="d-flex">
@@ -43,6 +43,7 @@
       class: "form-control",
       label_tag: "End time",
       placeholder: "13:00"
+
     %>
     </div>
     <%= text_field_tag :vehicle_type,
@@ -51,9 +52,7 @@
       label_tag: "Your vehicle type",
       placeholder: "Car"
     %>
-    <%= submit_tag "Search", class: "btn btn-warning form-control yellow" %>
+    <%= submit_tag "Search", class: "btn btn-warning form-control yellow margin-search" %>
     <% end %>
   </div>
 </div>
-
-
