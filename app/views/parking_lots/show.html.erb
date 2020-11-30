@@ -30,7 +30,7 @@
     <div class="card-name"><%= @parking_lot.name %></div>
     <div class="card-address"><%= @parking_lot.address %></div>
     <%#= @parking_lot.vehicle_type %>
-    <div class="card-price">$<%= @parking_lot.price %>/Hr</div>
+    <div class="card-price"><%= humanized_money_with_symbol(@parking_lot.price) %>/Hr</div>
 </div>
 
 <div class="card-booking">

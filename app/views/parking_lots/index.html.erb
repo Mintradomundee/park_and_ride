@@ -35,7 +35,7 @@
         </div>
         <div class="title">
           <h5><%= link_to parking_lot.name[0...17], parking_lot_path(parking_lot) %></h5>
-          <p class="card-parking-lot-pricing">$<%= parking_lot.price %> /Hr</p>
+          <p class="card-parking-lot-pricing"><%= humanized_money_with_symbol(parking_lot.price) %> /Hr</p>
         </div>
     </div>
   </div>

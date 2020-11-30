@@ -5,6 +5,11 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
+  def show
+    @review = Review.find(params[:id])
+    @parking_lot = @booking.parking_lot
+  end
+
   def create
     @parking_lot = ParkingLot.find(params[:parking_lot_id])
     @review = Review.new(review_params)

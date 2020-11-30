@@ -12,6 +12,10 @@ class PagesController < ApplicationController
   end
 
   def confirmation
-    @bookings = current_user.bookings
+    @booking = current_user.bookings.last
+  end
+
+  def history
+    @bookings = current_user.bookings.all
   end
 end
