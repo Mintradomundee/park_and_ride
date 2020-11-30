@@ -1,16 +1,37 @@
-<div class="container">
-  <h2>Confirmation Details<h2>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li class="bullet">
-      <div class="history-card">
-        <p class="time">Start time <%= booking.start_time %></p>
-        <p class="time">End time <%= booking.planned_end_time %></p>
-        <p class="total-time">Total time <%= (booking.planned_end_time - booking.start_time)/3600  %>hr.</p>
-        <p class="total-price">Price $<%= booking.booked_price %></p>
-        <i class="fas fa-parking parkicon"></i>
-      </div>
-      </li>
-    <% end %>
-  </ul>
+<div class="mt-1">
+  <%= form_tag parking_lots_path, method: :get do %>
+  <div class="searchbar mb-2">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find your parking lot"
+    %>
+    <%= submit_tag "Search", class: "btn ml-1"%>
+  <% end %>
+ </div>
+
+<div id="map"
+     style="width: 100%; height: 400px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+  <% if @booking.parking_lot.photo.attached? %>
+    <%= cl_image_tag @booking.parking_lot.photo.key, class: 'confirmation-img' %>
+  <% else %>
+    <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
+<% end %>
+<div class="confirmation-bullet">
+  <div class="parking-info">
+    <p><%= @booking.parking_lot.name %></p>
+    <p><%= @booking.parking_lot.address %></p>
+    <p class="total-price">Price $<%= @booking.booked_price %></p>
+  </div>
+  <hr/>
+  <div class="confirmation-message">
+    <p class="congrats">Congratulations !</p>
+    <p>Your booking is confirmed</p>
+    <p class="total-time"><%= (@booking.planned_end_time - @booking.start_time)/3600  %>hr</p>
+    <p>Please be back on time</p>
+  </div>
 </div>

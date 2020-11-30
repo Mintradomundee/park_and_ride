@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/confirmation', to:'pages#confirmation'
+  get '/history', to:'pages#history'
   # get '/new', to:'reviews#new'
   # get '/show', to: 'reviews#show'
 
