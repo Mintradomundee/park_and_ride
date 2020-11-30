@@ -64,51 +64,15 @@
   transition-delay: 0.3s;
 }
 
-.history-card {
+.confirmation-bullet {
+  list-style-type: none;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 500px;
-  text-align: right;
-  p {
-    font-size: 15px;
-  }
-}
-
-.bullet {
-  list-style-type: none;
-}
-
-.parkicon {
-  color: $main-blue;
+  padding: 20px 15px;
+  border-radius: 70px 70px 0 0;
   position: relative;
-  left: -400px;
-  top: -130px;
-}
-
-.time {
-  position: relative;
-  left: -200px;
-  bottom: -100px;
-}
-
-.total-time {
-  position: relative;
-  left: -230px;
-  top: -50px;
-  color: $text-gray;
-  font-weight: bold;
-}
-
-.total-price {
-  position: relative;
-  left: -100px;
-  top: -85px;
-  font-weight: bold;
-  color: $text-gray;
+  top: -70px
 }
 
 .container .card .title {
@@ -123,3 +87,19 @@
   }
 }
 
+.confirmation-message {
+  text-align: center;
+  .congrats {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.history-card {
+  list-style-type: none;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  padding: 15px 30px;
+}

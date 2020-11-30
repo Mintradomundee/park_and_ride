@@ -24,7 +24,6 @@ class BookingsController < ApplicationController
     planned_end_time = @booking.planned_end_time.to_datetime
     price = @parking_lot.price
     @booking.booked_price = total_price(price, start_time, planned_end_time)
-    # raise
     authorize @booking
     if @booking.save
       flash[:notice] = "Booked Successfully!"
