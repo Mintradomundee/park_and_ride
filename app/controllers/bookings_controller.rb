@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
 
-    
+
     @booking.parking_lot = @parking_lot
     start_time = @booking.start_time.to_datetime
     planned_end_time = @booking.planned_end_time.to_datetime
@@ -61,6 +61,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:parking_lot_id, :start_time, :planned_end_time, :vehicle_id)
+    #params["start_time"] = Date.strptime(params["start_time"], "%m/%d/%Y").to_s
+    params.require(:booking).permit(:parking_lot_id, :start_time, :planned_end_time)
   end
 end

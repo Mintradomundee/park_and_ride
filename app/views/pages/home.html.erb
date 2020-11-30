@@ -11,42 +11,42 @@
   </div>
   <div class="search-form">
     <%= form_tag parking_lots_path, method: :get do %>
-    <%= text_field_tag :query, 
+    <%= text_field_tag :query,
       params[:query],
       class: "form-control",
       label_tag: "Location",
       placeholder: "Location"
     %>
     <div class="d-flex">
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :start_date,
+      params[:start_date],
       class: "form-control",
       label_tag: "Day Start",
-      placeholder: "11/27/2020"
+      placeholder: "27/11/2020"
     %>
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :planned_end_date,
+      params[:planned_end_date],
       class: "form-control",
       label_tag: "Day End",
-      placeholder: "11/27/2020"
+      placeholder: "27/11/2020"
     %>
     </div>
     <div class="d-flex">
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :start_time,
+      params[:start_time],
       class: "form-control",
       label_tag: "Start time",
       placeholder: "12:00"
     %>
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :end_time,
+      params[:end_time],
       class: "form-control",
-      label_tag: "Ende time",
+      label_tag: "End time",
       placeholder: "13:00"
     %>
     </div>
-    <%= text_field_tag :query,
-      params[:query],
+    <%= text_field_tag :vehicle_type,
+      params[:vehicle_type],
       class: "form-control",
       label_tag: "Your vehicle type",
       placeholder: "Car"
@@ -55,5 +55,5 @@
     <% end %>
   </div>
 </div>
-  
+
 
