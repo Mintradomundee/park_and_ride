@@ -26,7 +26,7 @@
         </li>
         <li class="nav-item dropdown">
         </li>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/tifana", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
