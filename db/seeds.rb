@@ -52,7 +52,7 @@ parking_lots = ParkingLot.create!(
 )
 
 number = 1
-file = URI.open('https://source.unsplash.com/500x200/')
+file = URI.open('https://images.unsplash.com/photo-1572701203787-6e3f196126cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
 number += 1
 
@@ -63,7 +63,7 @@ parking_lots = ParkingLot.create!(
   price: 2,
   user: adam
 )
-file = URI.open('https://source.unsplash.com/500x200/')
+file = URI.open('https://images.unsplash.com/photo-1586023178822-1deb02fd2f83?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80')
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
 number += 1
 
@@ -74,7 +74,7 @@ parking_lots = ParkingLot.create!(
   price: 1,
   user: adam
 )
-file = URI.open('https://source.unsplash.com/500x200/')
+file = URI.open('https://images.unsplash.com/photo-1593280405106-e438ebe93f5b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
 number += 1
 
@@ -85,7 +85,7 @@ parking_lots = ParkingLot.create!(
   price: 3,
   user: adam
 )
-file = URI.open('https://source.unsplash.com/500x200/')
+file = URI.open('https://images.unsplash.com/photo-1533525377406-a0291a73c21a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80')
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
 number += 1
 
@@ -96,7 +96,7 @@ parking_lots = ParkingLot.create!(
   price: 1,
   user: adam
 )
-file = URI.open('https://source.unsplash.com/500x200/')
+file = URI.open('https://images.unsplash.com/photo-1516755538454-c8379d7a86aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
 number += 1
 
@@ -107,7 +107,7 @@ parking_lots = ParkingLot.create!(
   price: 2,
   user: adam
 )
-file = URI.open('https://source.unsplash.com/500x200/')
+file = URI.open('https://images.unsplash.com/photo-1597328588953-bfea27ae2fa9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
 number += 1
 
@@ -118,7 +118,7 @@ parking_lots = ParkingLot.create!(
   price: 1,
   user: adam
 )
-file = URI.open('https://source.unsplash.com/500x200/')
+file = URI.open('https://images.unsplash.com/photo-1591641614632-1b9204dd508e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
 number += 1
 
