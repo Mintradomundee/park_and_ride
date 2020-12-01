@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col-md-3"><%= image_tag @booking.parking_lot.photo_url, width: '100%' %></div>
+    <div class="col">
+      <h1>Booking #<%= @booking.id %> <small><span class="badge badge-primary"><%= @booking.state %></span></small></h1>
+      <ul class="list-unstyled">
+        <li><strong>ISSUED ON</strong> <%= @booking.created_at.to_date %></li>
+        <li><strong>PARKING LOT</strong> <%= @booking.parking_lot.name %></li>
+        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @booking.booked_price %></li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

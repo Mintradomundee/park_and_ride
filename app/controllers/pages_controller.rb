@@ -17,5 +17,7 @@ class PagesController < ApplicationController
 
   def history
     @bookings = current_user.bookings.all
+    # @active_booking = current_user.bookings.where("planned_end_time < ?", Time.now)
+    # @past_booking = @bookings - @active_booking
   end
 end
