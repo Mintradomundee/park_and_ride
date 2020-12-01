@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_132208) do
+ActiveRecord::Schema.define(version: 2020_12_01_093707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,9 +40,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_132208) do
     t.datetime "start_time"
     t.datetime "planned_end_time"
     t.datetime "actual_end_time"
-    t.integer "booked_price"
     t.integer "late_fee"
-    t.boolean "paid"
     t.bigint "vehicle_id"
     t.bigint "parking_lot_id"
     t.bigint "user_id"
@@ -50,9 +48,24 @@ ActiveRecord::Schema.define(version: 2020_11_30_132208) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "state"
     t.string "checkout_session_id"
+    t.integer "price_cents", default: 0, null: false
     t.index ["parking_lot_id"], name: "index_bookings_on_parking_lot_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
     t.index ["vehicle_id"], name: "index_bookings_on_vehicle_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "address"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_orders_on_booking_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "parking_lots", force: :cascade do |t|
@@ -62,10 +75,9 @@ ActiveRecord::Schema.define(version: 2020_11_30_132208) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.float "latitude"
     t.float "longitude"
-    t.string "sku"
-    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_parking_lots_on_user_id"
   end
 
@@ -103,6 +115,8 @@ ActiveRecord::Schema.define(version: 2020_11_30_132208) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "bookings"
+  add_foreign_key "orders", "users"
   add_foreign_key "parking_lots", "users"
   add_foreign_key "reviews", "parking_lots"
   add_foreign_key "reviews", "users"

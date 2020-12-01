@@ -6,10 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "open-uri"
 
 Vehicle.destroy_all
 #User.destroy_all
 ParkingLot.destroy_all
+Order.delete_all
 User.delete_all
 
 mintra = User.create!(
@@ -41,67 +43,84 @@ adam = User.create!(
 )
 
 parking_lots = ParkingLot.create!(
-  sku: "Pergamonmuseum",
   name: "Pergamonmuseum",
   address: "Bodestraße 1-3, 10178 Berlin",
   vehicle_type: "car",
   price: 1,
   user: adam
+
 )
 
+number = 1
+file = URI.open('https://source.unsplash.com/500x200/')
+parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
+number += 1
+
 parking_lots = ParkingLot.create!(
-  sku: "Institut für Zeitgenössische Kunst",
   name: "Institut für Zeitgenössische Kunst",
   address: "Auguststraße 69, 10117 Berlin",
   vehicle_type: "car",
   price: 2,
   user: adam
 )
+file = URI.open('https://source.unsplash.com/500x200/')
+parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
+number += 1
 
 parking_lots = ParkingLot.create!(
-  sku: "Brandenburger Tor",
   name: "Brandenburger Tor",
   address: "Pariser Platz, 10117 Berlin",
   vehicle_type: "car",
   price: 1,
   user: adam
 )
+file = URI.open('https://source.unsplash.com/500x200/')
+parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
+number += 1
 
 parking_lots = ParkingLot.create!(
-  sku: "Tränenpalast",
   name: "Tränenpalast",
   address: "Reichstagufer 17, 10117 Berlin",
   vehicle_type: "car",
   price: 3,
   user: adam
 )
+file = URI.open('https://source.unsplash.com/500x200/')
+parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
+number += 1
 
 parking_lots = ParkingLot.create!(
-  sku: "Reichstagsgebäude",
   name: "Reichstagsgebäude",
   address: "Platz der Republik 1, 11011 Berlin",
   vehicle_type: "car",
   price: 1,
   user: adam
 )
+file = URI.open('https://source.unsplash.com/500x200/')
+parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
+number += 1
 
 parking_lots = ParkingLot.create!(
-  sku: "Berliner Dom",
   name: "Berliner Dom",
   address: "Am Lustgarten, 10178 Berlin",
   vehicle_type: "car",
   price: 2,
   user: adam
 )
+file = URI.open('https://source.unsplash.com/500x200/')
+parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
+number += 1
 
 parking_lots = ParkingLot.create!(
-  sku: "Le Wagon Parking",
   name: "Le Wagon Parking",
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin",
   vehicle_type: "car",
   price: 1,
   user: adam
 )
+file = URI.open('https://source.unsplash.com/500x200/')
+parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
+number += 1
 
 
 
