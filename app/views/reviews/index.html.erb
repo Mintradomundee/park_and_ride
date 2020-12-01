@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Reviews<h2>
+  <p><%= @parking_lot.name %></p>
+  <p><%= @parking_lot.address %></p>
+
+  <%#= @reviews.rating_star %>
+  <ul>
+    <% @reviews.each do |review| %>
+			<div class="card-review">
+        <ul>
+					<li><%= review.rating_star %> stars</li>
+					<li><%= review.content %></li>
+        </ul>
+			</div>
+    <% end %>
+  </ul>
+</div>

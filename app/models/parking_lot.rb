@@ -5,6 +5,7 @@ class ParkingLot < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   monetize :price_cents
+  has_many :reviews
   
   include PgSearch::Model
   pg_search_scope :global_search,
@@ -15,6 +16,10 @@ class ParkingLot < ApplicationRecord
 
   def available?(from, to)
     bookings.where('start_time <= ? AND planned_end_time >= ?', to, from).none?
+  end
+
+  def rating_average
+    reviews.average(:rating_star)
   end
 
 end

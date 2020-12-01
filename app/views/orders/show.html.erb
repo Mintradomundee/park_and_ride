@@ -1,1 +1,16 @@
-<h1>Yay it's working</h1>
+<% if @order.booking.parking_lot.photo.attached? %>
+  <%= cl_image_tag @order.booking.parking_lot.photo.key, class: 'confirmation-img' %>
+<% else %>
+  <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
+<% end %>
+
+<div class="container">
+  <h2>Thank you, we hope you enjoy the parking lot!<h2>
+  <ul>
+    <%= simple_form_for([@parking_lot, @review]) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating_star %>
+      <%= f.submit %>
+    <% end %>
+  </ul>
+</div>

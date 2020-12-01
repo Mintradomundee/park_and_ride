@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get '/show', to: 'reviews#show'
 
   resources :parking_lots do
-    resources :reviews, only: [ :new, :show, :create ]
+    resources :reviews, only: [ :new, :index, :create ]
     resources :vehicles, only: [ :new, :create ]
     resources :bookings, only: [:index, :show, :create, :destroy]
   end

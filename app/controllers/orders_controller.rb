@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find(params[:id])
     authorize @order
+    @parking_lot = @order.booking.parking_lot
+    @review = Review.new
   end
 
   def create

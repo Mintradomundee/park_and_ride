@@ -1,22 +1,25 @@
 class ReviewsController < ApplicationController
-    
+  skip_before_action :authenticate_user!, only: :index
+
   def new
     @parking_lot = ParkingLot.find(params[:parking_lot_id])
     @review = Review.new
   end
 
-  def show
-    @review = Review.find(params[:id])
-    @parking_lot = @booking.parking_lot
+  def index
+    @parking_lot = ParkingLot.find(params[:parking_lot_id])
+    @reviews = Review.where(parking_lot: @parking_lot)
   end
 
   def create
     @parking_lot = ParkingLot.find(params[:parking_lot_id])
     @review = Review.new(review_params)
     @review.parking_lot = @parking_lot
+    @review.user = current_user
+    authorize @review
     @review.save
 
-    redirect_to parking_lots_path(@review)
+    redirect_to parking_lot_path(@parking_lot)
   end
 
   private
