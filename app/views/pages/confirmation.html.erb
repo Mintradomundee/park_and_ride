@@ -25,7 +25,7 @@
   <div class="parking-info">
     <p><%= @booking.parking_lot.name %></p>
     <p><%= @booking.parking_lot.address %></p>
-    <p class="total-price">Price $<%= @booking.booked_price %></p>
+    <p class="total-price">Price $<%= @booking.price %></p>
   </div>
   <hr/>
   <div class="confirmation-message">
@@ -35,3 +35,8 @@
     <p>Please be back on time</p>
   </div>
 </div>
+
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'booking_id', @booking.id %>
+  <%= submit_tag 'Checkout', class: 'btn btn-primary' %>
+<% end %>

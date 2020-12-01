@@ -33,22 +33,22 @@ class BookingsController < ApplicationController
     if @parking_lot.available?(start_time, planned_end_time)
       if @booking.save!
         # flash[:notice] = "Booked Successfully!"
-        order = Order.create!(booking: @booking, address: @parking_lot.address, amount: @booking.price, state: 'pending', user: current_user)
-        session = Stripe::Checkout::Session.create(
-          payment_method_types: ['card'],
-          line_items: [{
-            name: order.address,
-            images: [],
-            amount: @booking.price_cents,
-            currency: 'eur',
-            quantity: 1
-          }],
-          success_url: order_url(order),
-          cancel_url: order_url(order)
-        )
-        order.update(checkout_session_id: session.id)
-        redirect_to new_order_payment_path(order)
-        # redirect_to confirmation_path
+        # order = Order.create!(booking: @booking, address: @parking_lot.address, amount: @booking.price, state: 'pending', user: current_user)
+        # session = Stripe::Checkout::Session.create(
+        #   payment_method_types: ['card'],
+        #   line_items: [{
+        #     name: order.address,
+        #     images: [],
+        #     amount: @booking.price_cents,
+        #     currency: 'eur',
+        #     quantity: 1
+        #   }],
+        #   success_url: order_url(order),
+        #   cancel_url: order_url(order)
+        # )
+        # order.update(checkout_session_id: session.id)
+        # redirect_to new_order_payment_path(order)
+        redirect_to confirmation_path
       else
         render "parking_lots/show"
       end
