@@ -20,7 +20,7 @@
     <%= cl_image_tag @booking.parking_lot.photo.key, class: 'confirmation-img' %>
   <% else %>
     <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
-<% end %>
+  <% end %>
 <div class="confirmation-bullet">
   <div class="parking-info">
     <p><%= @booking.parking_lot.name %></p>
