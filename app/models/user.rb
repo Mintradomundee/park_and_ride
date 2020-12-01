@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :parking_lots
   has_many :vehicles
   has_many :bookings
+  has_many :orders
+
 end
