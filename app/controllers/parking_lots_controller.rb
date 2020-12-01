@@ -3,11 +3,8 @@ class ParkingLotsController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = " \
-      name ILIKE :query \
-      OR address ILIKE :query \
-      "
-      @parking_lots = ParkingLot.where(sql_query, query: "%#{params[:query]}%")
+      
+      @parking_lots = ParkingLot.global_search(params[:query])
     else
       @parking_lots = ParkingLot.all
     end
@@ -28,6 +25,15 @@ class ParkingLotsController < ApplicationController
     @parking_lot = ParkingLot.find(params[:id])
     @booking = Booking.new
     authorize @parking_lot
+    @address = @parking_lot.address
+    @parking_lots = ParkingLot.near(@address, 10)
+    @markers = [
+      {
+        lat: @parking_lot.latitude,
+        lng: @parking_lot.longitude,
+        image_url: helpers.asset_url('marker.png')
+      }
+    ]
   end
 
   def new
