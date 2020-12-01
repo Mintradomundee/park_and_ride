@@ -1,13 +1,12 @@
-<h2>History</h2>
+<h2 class="text-center">History</h2>
 <ul class="history">
 <% @bookings.each do |booking| %>
-  <div class="history-card">
-  <li>
-    <p><%= booking.parking_lot.address %></p>
-    <p>$<%= booking.booked_price %></p>
+  <li class="history-card">
+    <p class="history-address"><%= booking.parking_lot.address %></p>
+    <p class="history-price">$<%= booking.booked_price %></p>
+    <hr/>
     <p><%= booking.start_time %></p>
     <p><%= booking.planned_end_time %></p>
   </li>
-  </div>
 <% end %>
 </ul>
