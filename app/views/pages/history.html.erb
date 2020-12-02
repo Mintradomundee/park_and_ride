@@ -3,7 +3,7 @@
 <% @bookings.each do |booking| %>
   <li class="history-card">
     <p class="history-address"><%= booking.parking_lot.address %></p>
-    <p class="history-price">$<%= booking.booked_price %></p>
+    <p class="history-price"><%= humanized_money_with_symbol (booking.price) %></p>
     <hr/>
     <p><%= booking.start_time %></p>
     <p><%= booking.planned_end_time %></p>
