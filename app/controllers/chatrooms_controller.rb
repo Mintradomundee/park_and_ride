@@ -3,6 +3,6 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     authorize @chatroom
     @message = Message.new
-    #@parking_lot = ParkingLot.find(params[:id])
+    @parking_lot = ParkingLot.find(params[:parking_lot_id])
   end
 end

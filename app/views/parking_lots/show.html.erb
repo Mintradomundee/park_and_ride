@@ -29,7 +29,8 @@
   </div>
   <% end %>
 </div>
-<%= link_to "Contact", chatroom_path(@chatroom) %>
+<%= link_to "Contact", chatroom_path(@chatroom, parking_lot_id: @parking_lot.id) %>
+
 <!-- <p><a href="http://localhost:3000/chatrooms/">Contact</a></p>
  --><p> <%= link_to "Reviews",  parking_lot_reviews_path(@parking_lot) %> </p>
 <p><%= link_to "Back to list", parking_lots_path %></p>

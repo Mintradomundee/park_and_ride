@@ -12,7 +12,7 @@
 </div>
 
 <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+  <%= f.hidden_field :parking_lot_id, value: params[:parking_lot_id]  %>
   <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
 <% end %>
-
-<!-- <p> <%#= link_to "Parking Lot",  parking_lot_path(@parking_lot) %> </p> -->
+<%= link_to "Parking Lot",  parking_lot_path(@parking_lot) %>
