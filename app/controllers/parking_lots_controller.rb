@@ -3,7 +3,7 @@ class ParkingLotsController < ApplicationController
 
   def index
     if params[:query].present?
-      
+
       @parking_lots = ParkingLot.global_search(params[:query])
     else
       @parking_lots = ParkingLot.all
@@ -24,6 +24,7 @@ class ParkingLotsController < ApplicationController
   def show
     @parking_lot = ParkingLot.find(params[:id])
     @booking = Booking.new
+    @chatroom = Chatroom.last
     authorize @parking_lot
     @address = @parking_lot.address
     @parking_lots = ParkingLot.near(@address, 10)
@@ -34,7 +35,7 @@ class ParkingLotsController < ApplicationController
         image_url: helpers.asset_url('marker.png')
       }
     ]
-    
+
   end
 
   def new
