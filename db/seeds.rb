@@ -53,7 +53,6 @@ parking_lots = ParkingLot.create!(
   vehicle_type: "car",
   price: 1,
   user: adam
-
 )
 
 number = 1
@@ -123,7 +122,7 @@ parking_lots = ParkingLot.create!(
   price: 1,
   user: adam
 )
-file = URI.open('https://images.unsplash.com/photo-1591641614632-1b9204dd508e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+file = URI.open('https://images.unsplash.com/photo-1573709810130-b1cb3986e8af?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFya2luZyUyMGxvdHMlMjBiZXJsaW58ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60')
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
 number += 1
 

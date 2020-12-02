@@ -1,17 +1,19 @@
-<div class="container">
-  <h2>Reviews<h2>
-  <p><%= @parking_lot.name %></p>
-  <p><%= @parking_lot.address %></p>
-
-  <%#= @reviews.rating_star %>
-  <ul>
-    <% @reviews.each do |review| %>
-			<div class="card-review">
-        <ul>
-					<li><%= review.rating_star %> stars</li>
-					<li><%= review.content %></li>
-        </ul>
-			</div>
-    <% end %>
-  </ul>
+<div class="container-review">
+  <div class="reviewPl">
+    <h2>Reviews</h2>
+    <h4><%= @parking_lot.name %><h4>
+    <p><%= @parking_lot.address %></p>
+    <p><i class="fas fa-star"></i> <%= @parking_lot.rating_average %> out of 5</p>
+  </div>
+    
+  <div class="card cardRv">
+    <div class="card-body">
+      <% @reviews.each do |review| %>
+        <h5 class="card-title"><%= @parking_lot.user.name %></h5>
+        <p class="card-text">star<%= review.rating_star %></p>
+        <p class="card-text"><%= review.content %></p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <% end %>
+    </div>
+  </div>
 </div>

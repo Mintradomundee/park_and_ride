@@ -124,3 +124,29 @@
 .container .card .content p.address {
   font-weight: bold;
 }
+
+.container-review {
+  margin: 16px;
+  padding: 16px 4px 4px 4px;
+}
+
+.container-review .reviewPl {
+  text-align: center;
+  &> h2 {
+    font-weight: bold;
+    font-family: 'Nunito';
+  }
+  h4 {
+    font-size: 23px;
+    font-weight: lighter;
+  }
+  p {
+    font-size: small;
+    font-style: italic;
+  }
+}
+
+.container-review .card {
+  box-shadow: 0 1px #c9c6c6;
+  border-radius: 16px;
+}
