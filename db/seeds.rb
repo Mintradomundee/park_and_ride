@@ -13,9 +13,13 @@ Vehicle.destroy_all
 ParkingLot.destroy_all
 Order.delete_all
 User.delete_all
+Chatroom.delete_all
+
+Chatroom.create(name: "general")
 
 mintra = User.create!(
   name: "Mintra",
+  nickname: "Mintra",
   email: "mintra@mintra.com",
   password: "123456"
 )
@@ -26,7 +30,8 @@ Vehicle.create!(
 )
 
 sarah = User.create!(
-  name: "Mintra",
+  name: "Sarah",
+  nickname: "Sarah",
   email: "sarah@sarah.com",
   password: "123456"
 )
