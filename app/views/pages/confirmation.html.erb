@@ -25,7 +25,7 @@
   <div class="parking-info">
     <p><%= @booking.parking_lot.name %></p>
     <p><%= @booking.parking_lot.address %></p>
-    <p class="total-price">Price $<%= @booking.price %></p>
+    <p class="total-price">Price <%= humanized_money_with_symbol (@booking.price) %></p>
   </div>
   <hr/>
   <div class="confirmation-message">
@@ -33,10 +33,10 @@
     <p>Your booking is confirmed</p>
     <p class="total-time"><%= (@booking.planned_end_time - @booking.start_time)/3600  %>hr</p>
     <p>Please be back on time</p>
+    <%= form_tag orders_path do %>
+      <%= hidden_field_tag 'booking_id', @booking.id %>
+      <%= submit_tag 'Checkout', class: 'btn-checkout' %>
+    <% end %>
   </div>
 </div>
 
-<%= form_tag orders_path do %>
-  <%= hidden_field_tag 'booking_id', @booking.id %>
-  <%= submit_tag 'Checkout', class: 'btn btn-primary' %>
-<% end %>
