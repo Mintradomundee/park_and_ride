@@ -17,9 +17,12 @@ class ReviewsController < ApplicationController
     @review.parking_lot = @parking_lot
     @review.user = current_user
     authorize @review
-    @review.save
-
-    redirect_to parking_lot_path(@parking_lot)
+    if @review.save
+      redirect_to parking_lot_path(@parking_lot)
+    else
+      flash[:alert] = "Something went wrong."
+      render :new
+    end
   end
 
   private
