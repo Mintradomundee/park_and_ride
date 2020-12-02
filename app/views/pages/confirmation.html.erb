@@ -1,14 +1,5 @@
 <div class="mt-1">
-  <%= form_tag parking_lots_path, method: :get do %>
-  <div class="searchbar mb-2">
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find your parking lot"
-    %>
-    <%= submit_tag "Search", class: "btn ml-1"%>
-  <% end %>
- </div>
+
 
 <div id="map"
      style="width: 100%; height: 400px;"
