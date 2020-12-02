@@ -12,27 +12,26 @@
 </div>
 
 <div id="map"
-     style="width: 100%; height: 500px;"
+     style="width: 100%; height:320px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
 
 <div class="container">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
+  <div id="carouselExampleControls" class="carousel slide" data-interval="false" data-ride="carousel">
+    <%# <div class="carousel-inner"> %>
       <% @parking_lots.each.with_index do |parking_lot, index| %>
-        <div class="carousel-item <%='active' if index == 0 %>">
+        <div class="carousel-item <%='active bgwhite' if index == 0 %>">
           <div class="card">
-            <div class="imgBx">
               <% if parking_lot.photo.attached? %>
-                <img><%= cl_image_tag parking_lot.photo.key %>
+                <div class="imgBx" style="background-image: url('<%= cl_image_path parking_lot.photo.key, height: 300, width: 400, crop: :fill %>')">
               <% else %>
-                <img><%= image_tag "https://images.unsplash.com/photo-1498544921269-5a3045edb62e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80", class: "card-img-top", alt:"image" %>
+                <div class="imgBx" style="background-image: url('https://images.unsplash.com/photo-1498544921269-5a3045edb62e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')"> 
               <% end %>
             </div>
             <div class="content">
-              <p><%= parking_lot.address %></p>
+              <p class="address"><%= parking_lot.address %></p>
               <p>We are located near downtown and open 24 hour from monday-saturday.</p>
             </div>
             <div class="title">
@@ -42,7 +41,7 @@
           </div>
         </div>
       <% end %>
-    </div>
+    <%# </div> %>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
