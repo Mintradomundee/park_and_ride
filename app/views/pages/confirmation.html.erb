@@ -23,9 +23,9 @@
   <% end %>
 <div class="confirmation-bullet">
   <div class="parking-info">
-    <p><%= @booking.parking_lot.name %></p>
+    <p class="parking-name"><%= @booking.parking_lot.name %></p>
     <p><%= @booking.parking_lot.address %></p>
-    <p class="total-price">Price <%= humanized_money_with_symbol (@booking.price) %></p>
+    <p class="total-price"><%= humanized_money_with_symbol (@booking.price) %>/Hr</p>
   </div>
   <hr/>
   <div class="confirmation-message">
