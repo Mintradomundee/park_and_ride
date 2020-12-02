@@ -15,7 +15,7 @@ Order.delete_all
 User.delete_all
 Chatroom.delete_all
 
-Chatroom.create(name: "general")
+Chatroom.create(name: "Contact Owner")
 
 mintra = User.create!(
   name: "Mintra",
