@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
         @chatroom,
         render_to_string(partial: "message", locals: { message: @message })
       )
-      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}",parking_lot_id: params[:message][:parking_lot_id], start_time: params[:message][:start_time], planned_end_time: params[:message][:planned_end_time])
     else
       render "chatrooms/show"
     end
