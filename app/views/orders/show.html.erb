@@ -9,7 +9,7 @@
   <ul>
     <%= simple_form_for([@parking_lot, @review]) do |f| %>
       <%= f.input :content %>
-      <%= f.input :rating_star %>
+      <%= f.input :rating_star, collection: (1..5).to_a %>
       <%= f.submit %>
     <% end %>
   </ul>
