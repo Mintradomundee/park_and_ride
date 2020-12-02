@@ -1,0 +1,10 @@
+<div class="dropdown btn-menu movefront">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%= link_to "Search", root_path, class: "dropdown-item" %> 
+    <%= link_to "Parking Lots", parking_lots_path, class: "dropdown-item" %>
+    <%= link_to "History", history_path, class: "dropdown-item" %>
+  </div>
+</div>
