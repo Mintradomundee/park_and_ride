@@ -6,7 +6,7 @@ class ParkingLot < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   monetize :price_cents
   has_many :reviews, dependent: :destroy
-  
+
   include PgSearch::Model
   pg_search_scope :global_search,
     against: [ :name, :address ],
@@ -19,7 +19,7 @@ class ParkingLot < ApplicationRecord
   end
 
   def rating_average
-    sum = 0.0 
+    sum = 0.0
     reviews.each do |review|
       sum += review.rating_star
     end

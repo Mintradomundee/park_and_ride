@@ -1,2 +1,2 @@
-<h2><%= parking_lot.name %></h2>
+<h4><%= link_to parking_lot.name[0...17], parking_lot_path(parking_lot, start_time: params[:start_time], planned_end_time: params[:planned_end_time]), class:"text-decoration-none" %></h4>
 <p><%= parking_lot.address %></p>
