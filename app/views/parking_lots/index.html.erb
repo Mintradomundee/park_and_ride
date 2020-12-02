@@ -19,26 +19,38 @@
 
 
 <div class="container">
-  <% @parking_lots.each do |parking_lot| %>
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="card">
-        <div class="imgBx">
-          <% if parking_lot.photo.attached? %>
-            <img><%= cl_image_tag parking_lot.photo.key %>
-          <% else %>
-            <img><%= image_tag "https://images.unsplash.com/photo-1498544921269-5a3045edb62e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80", class: "card-img-top", alt:"image" %>
-          <% end %>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% @parking_lots.each.with_index do |parking_lot, index| %>
+        <div class="carousel-item <%='active' if index == 0 %>">
+          <div class="card">
+            <div class="imgBx">
+              <% if parking_lot.photo.attached? %>
+                <img><%= cl_image_tag parking_lot.photo.key %>
+              <% else %>
+                <img><%= image_tag "https://images.unsplash.com/photo-1498544921269-5a3045edb62e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80", class: "card-img-top", alt:"image" %>
+              <% end %>
+            </div>
+            <div class="content">
+              <p><%= parking_lot.address %></p>
+              <p>We are located near downtown and open 24 hour from monday-saturday.</p>
+            </div>
+            <div class="title">
+              <h5><%= link_to parking_lot.name[0...17], parking_lot_path(parking_lot, start_time: params[:start_time], planned_end_time: params[:planned_end_time]) %></h5>
+              <p class="card-parking-lot-pricing"><%= humanized_money_with_symbol(parking_lot.price) %> /Hr</p>
+            </div>
+          </div>
         </div>
-        <div class="content">
-          <p><%= parking_lot.address %></p>
-          <p>We are located near downtown and open 24 hour from monday-saturday.</p>
-        </div>
-        <div class="title">
-          <h5><%= link_to parking_lot.name[0...17], parking_lot_path(parking_lot, start_time: params[:start_time], planned_end_time: params[:planned_end_time]) %></h5>
-          <p class="card-parking-lot-pricing"><%= humanized_money_with_symbol(parking_lot.price) %> /Hr</p>
-        </div>
+      <% end %>
     </div>
-  </div>
-  <% end %>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 </div>
   <%# <%=  link_to "Edit", edit_parking_lot_path(@parking_lots), class: "btn btn-outline-success border-ra" %>
