@@ -19,7 +19,10 @@ class ParkingLot < ApplicationRecord
   end
 
   def rating_average
-    reviews.average(:rating_star)
+    sum = 0.0 
+    reviews.each do |review|
+      sum += review.rating_star
+    end
+    sum / reviews.length
   end
-
 end

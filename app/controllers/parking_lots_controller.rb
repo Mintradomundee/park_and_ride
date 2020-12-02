@@ -34,6 +34,7 @@ class ParkingLotsController < ApplicationController
         image_url: helpers.asset_url('marker.png')
       }
     ]
+    
   end
 
   def new
