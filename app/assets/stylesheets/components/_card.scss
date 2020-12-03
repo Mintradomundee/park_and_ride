@@ -100,6 +100,23 @@
   .congrats {
     font-size: 20px;
     font-weight: bold;
+    margin-left: 55px;
+  }
+  p {
+    margin: 0;
+  }
+  .confirm {
+    color: $text-gray;
+  }
+  .clockicon {
+    color: $yellow;
+    margin-right: 10px;
+  }
+  .fas {
+    color: red;
+  }
+  ul {
+    padding-inline-start: 0px !important; 
   }
 }
 

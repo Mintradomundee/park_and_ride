@@ -9,7 +9,6 @@ require 'faker'
 require "open-uri"
 
 Vehicle.destroy_all
-#User.destroy_all
 ParkingLot.destroy_all
 Order.destroy_all
 Chatroom.destroy_all
@@ -83,7 +82,8 @@ Vehicle.create!(
 )
 
 adam = User.create!(
-  name: "adam",
+  name: "Adam",
+  nickname: "Adam",
   email: "adam@adam.com",
   password: "123456"
 )
@@ -106,7 +106,7 @@ parking_lots = ParkingLot.create!(
   address: "Auguststraße 69, 10117 Berlin",
   vehicle_type: "car",
   price: 2,
-  user: adam
+  user_id: adam.id
 )
 file = URI.open('https://images.unsplash.com/photo-1586023178822-1deb02fd2f83?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80')
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')

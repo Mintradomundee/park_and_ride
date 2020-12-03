@@ -1,0 +1,59 @@
+.history {
+  height: 100vh;
+  position: relative;
+  padding: 16px;
+  .back-btn {
+    color: black;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 40px 0 0px;
+  }
+  .end-time {
+    position: relative;
+    right: -120px;
+    top: -60px;
+    font-weight: bolder;
+    color: $gray;
+  }
+
+  .history-card {
+    width: 100%;
+    height: 180px;
+    list-style-type: none;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    padding: 15px 30px;
+    border-radius: 20px;
+  }
+  .start-time {
+    font-weight: bolder;
+    color: $gray;
+    position: relative;
+    top: -20px;
+  }
+
+  .parkicon {
+    color: $main-blue;
+  }
+
+  .history-price {
+    position: relative;
+    right: -225px;
+    top: -80px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .history-address {
+    position: relative;
+    bottom: -10px;
+  }
+
+  .back-btn {
+    font-weight: bold;
+  }
+}

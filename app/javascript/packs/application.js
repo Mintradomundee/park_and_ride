@@ -38,5 +38,13 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
   initChatroomCable();
+  flatpickr(".datepicker", {
+    enableTime: true,
+    dateFormat: "d-m-Y H:i",
+    altInput: true,
+    time_24hr: true,
+    disableMobile: true,
+    allowInput: true
+});
   // initSelect2();
 });
