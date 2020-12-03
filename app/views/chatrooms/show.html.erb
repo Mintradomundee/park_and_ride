@@ -1,22 +1,23 @@
-<h1 class="text-center mb-3"><%= @chatroom.name %></h1>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <i class="author">
-        <span><%= message.user.nickname %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= message.content %></p>
-    </div>
+<div class="chatroom">
+  <%= link_to "Back",  parking_lot_path(@parking_lot, start_time: params[:start_time], planned_end_time: params[:planned_end_time] ), class: 'back-btn' %>
+  <h1 class="text-center mb-3"><%= @chatroom.name %></h1>
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-container" id="message-<%= message.id %>">
+        <i class="author">
+          <span><%= message.user.nickname %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+
+
+  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+    <%= f.hidden_field :parking_lot_id, value: params[:parking_lot_id]  %>
+    <%= f.hidden_field :planned_end_time, value: params[:planned_end_time]  %>
+    <%= f.hidden_field :start_time, value: params[:start_time]  %>
+    <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
   <% end %>
 </div>
-
-
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.hidden_field :parking_lot_id, value: params[:parking_lot_id]  %>
-  <%= f.hidden_field :planned_end_time, value: params[:planned_end_time]  %>
-  <%= f.hidden_field :start_time, value: params[:start_time]  %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-<% end %>
-
-<%= link_to "Parking Lot",  parking_lot_path(@parking_lot, start_time: params[:start_time], planned_end_time: params[:planned_end_time] ) %>
