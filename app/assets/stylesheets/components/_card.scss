@@ -145,9 +145,12 @@
   }
 }
 
-.container-review .card {
-  box-shadow: 0 1px #c9c6c6;
+#cardRv {
+  background-color: whitesmoke;
+  margin-bottom: 30px;
+  border-style: ridge;
   border-radius: 16px;
+  margin-top: 30px;
 }
 
 .staricon {
