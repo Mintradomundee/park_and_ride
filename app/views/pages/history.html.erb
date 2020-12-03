@@ -1,12 +1,15 @@
-<h2 class="text-center">History</h2>
-<ul class="history">
-<% @bookings.each do |booking| %>
-  <li class="history-card">
-    <p class="history-address"><%= booking.parking_lot.address %></p>
-    <p class="history-price"><%= humanized_money_with_symbol (booking.price) %></p>
-    <hr/>
-    <p><%= booking.start_time %></p>
-    <p><%= booking.planned_end_time %></p>
-  </li>
-<% end %>
-</ul>
+<div class="history">
+  <%= link_to "Back",  parking_lots_path, class: 'back-btn' %>
+  <h2 class="text-center">History</h2>
+  <ul class="history">
+  <% @bookings.each do |booking| %>
+    <li class="history-card">
+      <i class="fas fa-parking fa-2x parkicon"></i>
+      <p class="history-address"><%= booking.parking_lot.address %></p>
+      <p class="history-price"><%= humanized_money_with_symbol (booking.price) %></p>
+      <p class="start-time"><%= booking.start_time.strftime('%d-%m-%Y') %></p>
+      <p class="end-time"><%= booking.start_time.strftime('%H:%M') %> - <%= booking.planned_end_time.strftime('%H:%M') %></p>
+    </li>
+  <% end %>
+  </ul>
+</div>
