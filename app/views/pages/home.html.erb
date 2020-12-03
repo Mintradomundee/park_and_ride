@@ -18,15 +18,15 @@
     %>
     <%= text_field_tag :start_time,
       params[:start_time],
-      class: "datepicker bg-white text-align",
+      class: "datepicker form-control text-align",
       placeholder: "Start Time"
     %>
     <%= text_field_tag :planned_end_time,
       params[:planned_end_time],
-      class: "datepicker bg-white text-align",
+      class: "datepicker form-control text-align",
       placeholder: "End Time"
     %>
-    <%= submit_tag "Search", class: "btn btn-warning form-control yellow margin-search" %>
+    <%= submit_tag "Search", class: "btn-search margin-search" %>
     <% end %>
   </div>
 </div>
