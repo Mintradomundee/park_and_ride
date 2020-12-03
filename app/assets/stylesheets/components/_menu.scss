@@ -1,9 +1,13 @@
 .btn-menu {
-    position: sticky;
-    top: 40px;
-    text-align: right;
+    position: fixed;
+    top: 16px;
+    right: 16px;
 }
 
 .movefront {
     z-index: 10;
+}
+
+.btn-secondary{
+    color: white;
 }

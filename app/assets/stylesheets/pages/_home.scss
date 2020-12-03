@@ -1,6 +1,16 @@
 // Specific CSS for your home-page
 
-  #map {
-    width: 100vw;
-    height: 375px;
-  }
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+
+.details-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 40px 40px 0 0;
+  z-index: 2;
+  box-shadow: 0 -9px 14px rgba(126,87,88,.1),0 3px 6px rgba(0,0,0,.08);
+}

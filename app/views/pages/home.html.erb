@@ -1,10 +1,10 @@
-
-<div class="bg-white">  
-  <div id="map"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
+ 
+<div id="map"
+    style="height: 100vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+<div class="details-container">
   <div class="home-card-description card-black">
     <h2>EasyPark</h2>
     <h4>Fast & Convenient</h4>
