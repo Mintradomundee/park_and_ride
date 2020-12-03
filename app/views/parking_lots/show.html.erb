@@ -1,5 +1,5 @@
 <div id="map"
-     style="width: 100%; height: 400px;"
+     style="width: 100%; height: 350px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
@@ -12,8 +12,14 @@
 <% end %>
 <div class="show-card-description">
     <div class="card-name"><%= @parking_lot.name %></div>
-    <p><%= @parking_lot.rating_average %></p>
     <div class="card-address"><%= @parking_lot.address %></div>
+    <div class="star-rating">
+      <% if @parking_lot.rating_average > 0.0 %>
+        <p><i class="fas fa-star staricon"></i><%= @parking_lot.rating_average %></p>
+      <% else %>
+        <p>No ratings</p>
+      <% end %>
+    </div>
     <div class="card-price"><%= humanized_money_with_symbol(@parking_lot.price) %>/Hr</div>
 </div>
 
@@ -23,13 +29,13 @@
       <%= form_for [@parking_lot, @booking] do |f|  %>
         <%= f.hidden_field :start_time, value: params[:start_time] %>
         <%= f.hidden_field :planned_end_time,  value: params[:planned_end_time] %>
+        <p>Choose your vehicle   <%= f.collection_select :vehicle, current_user.vehicles, :id, :license_plate %></p>
+        <p><%= link_to "Reviews",  parking_lot_reviews_path(@parking_lot), class: 'review-show' %></p>
         <%= f.submit 'Book', class: 'btn-book' %>
-        <%= f.collection_select :vehicle, current_user.vehicles, :id, :license_plate %>
+        <%= link_to "Contact", chatroom_path(@chatroom, parking_lot_id: @parking_lot.id, start_time: params[:start_time], planned_end_time: params[:planned_end_time]), class: 'btn-contact' %>
       <% end %>
   </div>
   <% end %>
 </div>
-<%= link_to "Contact", chatroom_path(@chatroom, parking_lot_id: @parking_lot.id, start_time: params[:start_time], planned_end_time: params[:planned_end_time] ) %>
-
-<p> <%= link_to "Reviews",  parking_lot_reviews_path(@parking_lot) %> </p>
 <p><%= link_to "Back to list", parking_lots_path %></p>
+
