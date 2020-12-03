@@ -1,0 +1,38 @@
+.chatroom {
+  height: 100vh;
+  position: relative;
+  padding: 16px;
+  h1 {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 40px 0 0px;
+    background: $yellow;
+    color: $gray;
+    padding: 8px;
+    border-radius: 12px 12px 0 0;
+  }
+  .new_message {
+    position: absolute;
+    bottom: 16px;
+    width: calc(100% - 32px);
+  }
+  #messages {
+    padding: 8px;
+    height: 70%;
+    background-color: white;
+    overflow: scroll;
+  }
+  .message-container {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid $text-gray;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .back-btn {
+    color: black;
+    font-weight: 600;
+  }
+}
+
