@@ -17,6 +17,42 @@ Chatroom.delete_all
 
 Chatroom.create(name: "Contact Owner")
 
+peter = User.create!(
+  name: "Peter",
+  nickname: "Peter",
+  email: "peter@gmail.com",
+  password: "123456"
+)
+Vehicle.create!(
+  user: peter,
+  vehicle_type: "Car",
+  license_plate: "B-WF4186"
+)
+
+mark = User.create!(
+  name: "Mark",
+  nickname: "Mark",
+  email: "mark@gmail.com",
+  password: "123456"
+)
+Vehicle.create!(
+  user: mark,
+  vehicle_type: "Car",
+  license_plate: "B-RL701"
+)
+
+sophie = User.create!(
+  name: "Sophie",
+  nickname: "Sophie",
+  email: "Sophie@gmail.com",
+  password: "123456"
+)
+Vehicle.create!(
+  user: sophie,
+  vehicle_type: "Car",
+  license_plate: "B-RL880"
+)
+
 mintra = User.create!(
   name: "Mintra",
   nickname: "Mintra",
@@ -126,18 +162,4 @@ file = URI.open('https://images.unsplash.com/photo-1573709810130-b1cb3986e8af?ix
 parking_lots.photo.attach(io: file, filename: "parking_lot_#{number}.jpg", content_type: 'image/png')
 number += 1
 
-
-
-# 30.times do
-
-#   parking_lots = ParkingLot.new(
-#     name: Faker::Name.name,
-#     address: Faker::Address.city,
-#     vehicle_type: Faker::Vehicle.drive_type,
-#     price: Faker::Commerce.price,
-#     user: adam
-#   )
-
-#   parking_lots.save!
-# end
 puts 'Finished!'
