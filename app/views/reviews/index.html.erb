@@ -9,8 +9,10 @@
   <div class="card cardRv">
     <div class="card-body">
       <% @reviews.each do |review| %>
-        <h5 class="card-title"><%= @parking_lot.user.name %></h5>
-        <p class="card-text">star<%= review.rating_star %></p>
+        <h5 class="card-title"><%= review.user.name %></h5>
+        <% review.rating_star.times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
         <p class="card-text"><%= review.content %></p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       <% end %>
