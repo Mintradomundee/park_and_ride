@@ -1,12 +1,12 @@
 
-<div id="map"
-     style="width: 100%; height:320px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
 
+  <div id="map"
+      style="width: 100%; height:100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
-<div class="container">
+<div class="details-container">
   <div id="carouselExampleControls" class="carousel slide" data-interval="false" data-ride="carousel">
     <%# <div class="carousel-inner"> %>
       <% @parking_lots.each.with_index do |parking_lot, index| %>
@@ -42,3 +42,4 @@
 </div>
 </div>
   <%# <%=  link_to "Edit", edit_parking_lot_path(@parking_lots), class: "btn btn-outline-success border-ra" %>
+</div>
