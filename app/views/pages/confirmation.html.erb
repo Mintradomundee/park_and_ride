@@ -12,7 +12,7 @@
   <% else %>
     <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
   <% end %>
-<div class="confirmation-bullet">
+  <div class="confirmation-bullet">
   <div class="parking-info">
     <p class="parking-name"><%= @booking.parking_lot.name %></p>
     <p><%= @booking.parking_lot.address %></p>
@@ -20,7 +20,7 @@
   </div>
   <hr/>
   <div class="confirmation-message">
-    <p class="congrats">Congratulations !</p>
+    <p class="congrats">Congratulations!</p>
     <p>Your booking is confirmed</p>
     <p class="total-time"><%= (@booking.planned_end_time - @booking.start_time)/3600  %>hr</p>
     <p>Please be back on time</p>

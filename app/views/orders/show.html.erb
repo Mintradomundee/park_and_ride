@@ -1,16 +1,23 @@
 <% if @order.booking.parking_lot.photo.attached? %>
-  <%= cl_image_tag @order.booking.parking_lot.photo.key, class: 'confirmation-img' %>
+  <%= cl_image_tag @order.booking.parking_lot.photo.key, class: 'card-img-review' %>
 <% else %>
-  <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
+  <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img-review' %>
 <% end %>
 
-<div class="container">
-  <h2>Thank you, we hope you enjoy the parking lot!<h2>
-  <ul>
+ <div class="confirmation-message mt-3">
+    <p class="congrats">Thank you!</p>
+    <p>We hope you enjoy booking <br/> your parking spot with us <i class="fas fa-heart"></i></p>
+    <br>
+    <br>
+  <div class="review-form">
     <%= simple_form_for([@parking_lot, @review]) do |f| %>
-      <%= f.input :content %>
-      <%= f.input :rating_star, collection: (1..5).to_a %>
-      <%= f.submit %>
+      <div class="d-flex justify-content-center">
+        <small><%= f.input :rating_star, collection: (1..5).to_a, :label => "Leave a rating for the parking lot" %></small>
+      </div>
+      <small><%= f.input :content, :label => "Leave a short review" %></small>
+      <%= f.button :submit, class:'btn-checkout' %>
     <% end %>
-  </ul>
+  </div>
+  
 </div>
+
