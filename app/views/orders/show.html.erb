@@ -4,20 +4,19 @@
   <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img-review' %>
 <% end %>
 
- <div class="confirmation-message mt-3">
-    <p class="congrats">Thank you!</p>
+ <div class="confirmation-message mt-4">
+    <h3>Thank you!</h3>
     <p>We hope you enjoy booking <br/> your parking spot with us <i class="fas fa-heart"></i></p>
     <br>
     <br>
   <div class="review-form">
     <%= simple_form_for([@parking_lot, @review]) do |f| %>
       <div class="d-flex justify-content-center">
-        <small><%= f.input :rating_star, collection: (1..5).to_a, :label => "Leave a rating for the parking lot" %></small>
+        <%= f.input :rating_star, collection: (1..5).to_a, :label => "Leave a rating for the parking lot" %>
       </div>
-      <small><%= f.input :content, :label => "Leave a short review" %></small>
+      <%= f.input :content, :label => "Leave a short review" %>
       <%= f.button :submit, class:'btn-checkout' %>
     <% end %>
   </div>
-  
 </div>
 
