@@ -6,5 +6,6 @@
     <%= link_to "Search", root_path, class: "dropdown-item" %> 
     <%= link_to "Parking Lots", parking_lots_path, class: "dropdown-item" %>
     <%= link_to "History", history_path, class: "dropdown-item" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
   </div>
 </div>

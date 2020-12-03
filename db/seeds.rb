@@ -27,6 +27,11 @@ Vehicle.create!(
   vehicle_type: "Car",
   license_plate: "B-WF4186"
 )
+Vehicle.create!(
+  user: peter,
+  vehicle_type: "Car",
+  license_plate: "B-WF4100"
+)
 
 mark = User.create!(
   name: "Mark",
