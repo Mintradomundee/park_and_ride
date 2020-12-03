@@ -154,3 +154,19 @@
 .staricon {
   color: $yellow;
 }
+
+.parking-lot-card {
+  position: relative;
+}
+
+.star-rating {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 12px 6px;
+  p {
+    margin: 0;
+  }
+}

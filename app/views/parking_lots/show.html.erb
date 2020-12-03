@@ -4,25 +4,25 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-
-<% if @parking_lot.photo.attached? %>
-  <%= cl_image_tag @parking_lot.photo.key, class: 'card-img' %>
-<% else %>
-  <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
-<% end %>
-<div class="show-card-description">
-    <div class="card-name"><%= @parking_lot.name %></div>
-    <div class="card-address"><%= @parking_lot.address %></div>
-    <div class="star-rating">
-      <% if @parking_lot.rating_average > 0.0 %>
-        <p><i class="fas fa-star staricon"></i><%= @parking_lot.rating_average %></p>
-      <% else %>
-        <p>No ratings</p>
-      <% end %>
-    </div>
-    <div class="card-price"><%= humanized_money_with_symbol(@parking_lot.price) %>/Hr</div>
+<div class="parking-lot-card">
+  <% if @parking_lot.photo.attached? %>
+    <%= cl_image_tag @parking_lot.photo.key, class: 'card-img' %>
+  <% else %>
+    <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
+  <% end %>
+  <div class="star-rating">
+    <% if @parking_lot.rating_average > 0.0 %>
+      <p><i class="fas fa-star staricon"></i><%= @parking_lot.rating_average %></p>
+    <% else %>
+      <p>No ratings</p>
+    <% end %>
+  </div>
+  <div class="show-card-description">
+      <div class="card-name"><%= @parking_lot.name %></div>
+      <div class="card-address"><%= @parking_lot.address %></div>
+      <div class="card-price"><%= humanized_money_with_symbol(@parking_lot.price) %>/Hr</div>
+  </div>
 </div>
-
 <div class="card-booking">
   <% if current_user != @parking_lot.user%>
     <div class="col-12 col-md-6 col-lg-10 p-3">
