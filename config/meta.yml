@@ -1,0 +1,5 @@
+meta_product_name: "EasyPark"
+meta_title: "EasyPark - Fast and Convenient"
+meta_description: "A platform where drivers can search for parking space and anyone who has extra spaces/ garage can rent it out for drivers to park"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@easypark_"   # required for Twitter Cards
