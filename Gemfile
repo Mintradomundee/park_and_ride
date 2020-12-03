@@ -30,6 +30,7 @@ gem 'money-rails'
 gem 'stripe'
 gem 'pg_search', '~> 2.3.0'
 gem 'stripe_event'
+gem 'redis'
 
 
 # Use Active Storage variant
