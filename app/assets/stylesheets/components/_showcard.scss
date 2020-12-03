@@ -1,5 +1,5 @@
 .show-card-description {
-  height: 120px;
+  height: 110px;
   list-style-type: none;
   overflow: hidden;
   background: white;
@@ -10,7 +10,7 @@
     position: relative;
     font-size: 20px;
     margin-top: 30px;
-    right: -60px;
+    right: -30px;
     font-weight: bold;
   }
 }
@@ -23,6 +23,7 @@
 }
 
 .card-booking {
+  height: 150px;
   background: white;
   display: flex;
   justify-content: center;
@@ -32,7 +33,7 @@
 
 .card-address {
   position: relative;
-  right: -60px;
+  right: -30px;
   color: $text-gray;
 }
 
@@ -52,4 +53,13 @@
   float: right;
   position: relative;
   top: -60px;
+}
+
+.review-show {
+  color: black;
+  &:hover {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+  }
 }

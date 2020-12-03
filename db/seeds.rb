@@ -11,9 +11,9 @@ require "open-uri"
 Vehicle.destroy_all
 #User.destroy_all
 ParkingLot.destroy_all
-Order.delete_all
-User.delete_all
-Chatroom.delete_all
+Order.destroy_all
+Chatroom.destroy_all
+User.destroy_all
 
 Chatroom.create(name: "Contact Owner")
 
