@@ -1,5 +1,5 @@
 <% if @order.booking.parking_lot.photo.attached? %>
-  <%= cl_image_tag @order.booking.parking_lot.photo.key, class: 'confirmation-img' %>
+  <%= cl_image_tag @order.booking.parking_lot.photo.key, class: 'card-img' %>
 <% else %>
   <%= image_tag "https://source.unsplash.com/500x200/", alt:"image", class: 'card-img' %>
 <% end %>
