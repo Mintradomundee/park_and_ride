@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
           currency: 'eur',
           quantity: 1
         }],
-        success_url: order_url(order),
+        success_url: "https://www.easypark.rent/orders/#{order.id}",
         cancel_url: order_url(order)
       )
       order.update(checkout_session_id: session.id)
