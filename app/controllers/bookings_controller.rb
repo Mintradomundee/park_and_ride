@@ -27,6 +27,7 @@ class BookingsController < ApplicationController
     price = @parking_lot.price
     @booking.price = total_price(price, start_time, planned_end_time)
     authorize @booking
+    @chatroom = Chatroom.last
 
     # photo = cl_image_path @parking_lot.photo.key
 
