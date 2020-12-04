@@ -33,7 +33,7 @@
         <p>Choose your vehicle   <%= f.collection_select :vehicle, current_user.vehicles, :id, :license_plate %></p>
         <p><%= link_to "Reviews",  parking_lot_reviews_path(@parking_lot), class: 'review-show' %></p>
         <%= f.submit 'Book', class: 'btn-book' %>
-        <%= link_to "Contact", chatroom_path(@chatroom, parking_lot_id: @parking_lot.id, start_time: params[:start_time], planned_end_time: params[:planned_end_time]), class: 'btn-contact' %>
+        <%= link_to "Contact", chatroom_path(id: @chatroom.id, parking_lot_id: @parking_lot.id, start_time: params[:start_time], planned_end_time: params[:planned_end_time]), class: 'btn-contact' %>
       <% end %>
   </div>
   <% end %>
