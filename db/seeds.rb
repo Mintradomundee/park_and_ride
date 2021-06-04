@@ -17,6 +17,12 @@ User.destroy_all
 Chatroom.create(name: "Contact Owner")
 
 peter = User.create!(
+  name: "Lee",
+  nickname: "Lee",
+  email: "lee@gmail.com",
+  password: "123456"
+)
+peter = User.create!(
   name: "Peter",
   nickname: "Peter",
   email: "peter@gmail.com",
